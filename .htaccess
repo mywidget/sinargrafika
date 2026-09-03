@@ -1,0 +1,40 @@
+# Force correct MIME type and encoding for sitemap, RSS feeds, and robots
+<IfModule mod_mime.c>
+  AddType "application/xml; charset=UTF-8" .xml
+  AddType "application/rss+xml; charset=UTF-8" .rss
+  AddType "text/plain; charset=UTF-8" .txt
+</IfModule>
+
+# Explicit type mapping for the RSS feed file
+<Files "rss.xml">
+  ForceType "application/rss+xml; charset=UTF-8"
+</Files>
+
+# Handle Redirects and SPA Routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Force HTTPS Redirect (301) for all requests
+  # This ensures Googlebot can fetch sitemap and assets securely under a single HTTPS protocol
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # 2. Prevent Rewrite Loops for existing static files
+  # If the requested filename exists as a real file or directory, serve it directly (handles sitemap.xml, robots.txt, assets)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. SPA Fallback for React Router
+  # Otherwise, route all remaining non-file requests to index.html
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Set explicit header instructions to allow indexation and prevent caching issues for crawlers
+<IfModule mod_headers.c>
+  <FilesMatch "\.(xml|txt)$">
+    Header set X-Robots-Tag "index, follow"
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
