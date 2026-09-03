@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'printpro-cache-v1788440064503';
+const CACHE_NAME = 'printpro-cache-v1788449021492';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html'
