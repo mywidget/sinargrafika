@@ -1,4 +1,4 @@
-# Force correct MIME type and encoding for sitemap, RSS feeds, and robots
+﻿# Force correct MIME type and encoding for sitemap, RSS feeds, and robots
 <IfModule mod_mime.c>
   AddType "application/xml; charset=UTF-8" .xml
   AddType "application/rss+xml; charset=UTF-8" .rss
@@ -38,3 +38,4 @@
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
 </IfModule>
+

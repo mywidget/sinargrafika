@@ -202,8 +202,8 @@
 			color:#cbd5e1;
 			}
 		</style>
-		<script type="module" crossorigin src="/assets/index-CoyjVP5V.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-C9OwqJU1.css">
+		<script type="module" crossorigin src="/assets/index-CeRnVUHr.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-PrMsJRJn.css">
 	</head>
 	<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
 		<div id="root"></div>
@@ -218,6 +218,21 @@
 			</div>
 		</div>
 		<script>
+			setInterval(() => {
+				const devtoolsOpen =
+				window.outerWidth - window.innerWidth > 160 ||
+				window.outerHeight - window.innerHeight > 160;
+				
+				const warning = document.getElementById('devtools-warning');
+				
+				if (devtoolsOpen) {
+					warning.style.display = 'flex';
+					document.body.style.overflow = 'hidden';
+					} else {
+					warning.style.display = 'none';
+					document.body.style.overflow = '';
+				}
+			}, 1000);
 			if ('serviceWorker' in navigator && navigator.serviceWorker) {
 				window.addEventListener('load', () => {
 					navigator.serviceWorker.register('/sw.js').then(reg => {
