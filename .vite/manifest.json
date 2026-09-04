@@ -5,7 +5,7 @@
     "isDynamicEntry": true
   },
   "index.html": {
-    "file": "assets/index-CeRnVUHr.js",
+    "file": "assets/index-R07t2Xdv.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -17,11 +17,11 @@
       "_browser-CTB2jwNe.js"
     ],
     "css": [
-      "assets/index-PrMsJRJn.css"
+      "assets/index-DBUFc81e.css"
     ]
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "assets/index.es-BajsqdpV.js",
+    "file": "assets/index.es-6TdVt_9s.js",
     "name": "index.es",
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
