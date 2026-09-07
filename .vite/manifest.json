@@ -1,11 +1,11 @@
 {
-  "_browser-CTB2jwNe.js": {
-    "file": "assets/browser-CTB2jwNe.js",
+  "_browser-BXdiCFWD.js": {
+    "file": "assets/browser-BXdiCFWD.js",
     "name": "browser",
     "isDynamicEntry": true
   },
   "index.html": {
-    "file": "assets/index-wLoIG3aH.js",
+    "file": "assets/index-dLMkdNMY.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -13,15 +13,15 @@
       "node_modules/html2canvas/dist/html2canvas.esm.js",
       "node_modules/dompurify/dist/purify.es.mjs",
       "node_modules/canvg/lib/index.es.js",
-      "_browser-CTB2jwNe.js",
-      "_browser-CTB2jwNe.js"
+      "_browser-BXdiCFWD.js",
+      "_browser-BXdiCFWD.js"
     ],
     "css": [
       "assets/index-BDwGZTb0.css"
     ]
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "assets/index.es-Cc-7tlfs.js",
+    "file": "assets/index.es-Vw-Dqrcr.js",
     "name": "index.es",
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
@@ -30,7 +30,7 @@
     ]
   },
   "node_modules/dompurify/dist/purify.es.mjs": {
-    "file": "assets/purify.es-BSKMTLSQ.js",
+    "file": "assets/purify.es-DDpmou9H.js",
     "name": "purify.es",
     "src": "node_modules/dompurify/dist/purify.es.mjs",
     "isDynamicEntry": true

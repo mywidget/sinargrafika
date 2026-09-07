@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿.htaccess
 
 node_modules/
@@ -9,3 +10,19 @@ dist/
 .env.*
 
 .cloudflare.json
+=======
+﻿.htaccess
+
+node_modules/
+
+dist/
+
+.env
+
+.env.*
+
+.cloudflare.json
+.user.ini
+>>>>>>> 0903171b3185bcc753d34555c9108b3f55a443c1
+
+.htaccess
