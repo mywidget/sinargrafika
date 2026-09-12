@@ -1,152 +1,156 @@
 
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>PrintPro POS - POS Percetakan</title>
-  <meta name="description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi cetak otomatis, kelola stok kertas, pantau cabang, kirim otomatis via WhatsApp Gateway, dan raih profit maksimal.">
-  <meta name="keywords" content="pos percetakan, aplikasi kasir, printpro pos, billing percetakan, software percetakan, aplikasi percetakan, cetak digital, kasir percetakan, whatsapp gateway">
-  <meta name="author" content="PrintPro">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="/">
-  <meta property="og:title" content="PrintPro POS - POS Percetakan">
-  <meta property="og:description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi, kelola stok, dan raih profit maksimal.">
-  <meta property="og:image" content="/seo-banner.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="/">
-  <meta name="twitter:title" content="PrintPro POS - POS Percetakan">
-  <meta name="twitter:description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi, kelola stok, dan raih profit maksimal.">
-  <meta name="twitter:image" content="/seo-banner.png">
-
-  <link rel="icon" type="image/png" href="/favicon.ico" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <link rel="manifest" href="/manifest.json">
-  <link rel="alternate" type="application/rss+xml" title="PrintPro - Sistem Manajemen &amp; POS Percetakan Modern RSS Feed" href="/rss.xml" />
-  <meta name="theme-color" content="#4f46e5">
-  
-  <!-- Safe event interception to prevent iframe Permissions Policy violations on unload event registration -->
-  <script>
-    (function() {
-      try {
-        if (typeof EventTarget !== 'undefined' && EventTarget.prototype) {
-          var originalAdd = EventTarget.prototype.addEventListener;
-          EventTarget.prototype.addEventListener = function(type, listener, options) {
-            if (type === 'unload') {
-              return;
-            }
-            return originalAdd.apply(this, arguments);
-          };
-          var originalRemove = EventTarget.prototype.removeEventListener;
-          EventTarget.prototype.removeEventListener = function(type, listener, options) {
-            if (type === 'unload') {
-              return;
-            }
-            return originalRemove.apply(this, arguments);
-          };
-        }
-      } catch (e) {
-        // Suppress safely
-      }
-    })();
-  </script>
-<!-- Google tag (gtag.js) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6PBHB1Y473"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6PBHB1Y473');
-</script>
--->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      /* Default Indigo Colors */
-      --brand-50: #f5f3ff;
-      --brand-100: #ede9fe;
-      --brand-200: #ddd6fe;
-      --brand-300: #c4b5fd;
-      --brand-400: #a78bfa;
-      --brand-500: #8b5cf6;
-      --brand-600: #4f46e5;
-      --brand-700: #4338ca;
-      --brand-800: #3730a3;
-      --brand-900: #312e81;
-      --brand-950: #1e1b4b;
-    }
-
-    body { 
-      font-family: 'Inter', sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      touch-action: pan-x pan-y;
-    }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none;  scrollbar-width: none; }
-    
-    .swal2-popup {
-      border-radius: 2rem !important;
-      padding: 2rem !important;
-    }
-    .swal2-title {
-      font-weight: 900 !important;
-      letter-spacing: -0.025em !important;
-    }
-    .swal2-confirm {
-      background-color: var(--brand-600) !important;
-      border-radius: 1rem !important;
-      font-weight: 700 !important;
-    }
-
-    @keyframes bell-ring {
-      0%, 100% { transform: rotate(0); }
-      20% { transform: rotate(15deg); }
-      40% { transform: rotate(-15deg); }
-      60% { transform: rotate(10deg); }
-      80% { transform: rotate(-10deg); }
-    }
-    .animate-ring {
-      animation: bell-ring 0.6s ease-in-out;
-    }
-
-    /* Quill Editor Custom Styling */
-    .ql-toolbar.ql-snow {
-      border: 1px solid #e2e8f0 !important;
-      border-top-left-radius: 1.5rem !important;
-      border-top-right-radius: 1.5rem !important;
-      background-color: #f8fafc !important;
-      padding: 0.75rem !important;
-    }
-    .ql-container.ql-snow {
-      border: 1px solid #e2e8f0 !important;
-      border-bottom-left-radius: 1.5rem !important;
-      border-bottom-right-radius: 1.5rem !important;
-      background-color: #f8fafc !important;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 14px !important;
-      min-height: 150px;
-    }
-    .ql-editor {
-      min-height: 150px;
-    }
-    .ql-editor.ql-blank::before {
-      color: #94a3b8 !important;
-      font-style: normal !important;
-    }
-    #devtools-warning{
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>PrintPro POS - POS Percetakan</title>
+		<meta name="description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi cetak otomatis, kelola stok kertas, pantau cabang, kirim otomatis via WhatsApp Gateway, dan raih profit maksimal.">
+		<meta name="keywords" content="pos percetakan, aplikasi kasir, printpro pos, billing percetakan, software percetakan, aplikasi percetakan, cetak digital, kasir percetakan, whatsapp gateway">
+		<meta name="author" content="PrintPro">
+		<meta name="robots" content="index, follow">
+		
+		<!-- Open Graph / Facebook / WhatsApp -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="/">
+		<meta property="og:title" content="PrintPro POS - POS Percetakan">
+		<meta property="og:description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi, kelola stok, dan raih profit maksimal.">
+		<meta property="og:image" content="/seo-banner.png">
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:url" content="/">
+		<meta name="twitter:title" content="PrintPro POS - POS Percetakan">
+		<meta name="twitter:description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi, kelola stok, dan raih profit maksimal.">
+		<meta name="twitter:image" content="/seo-banner.png">
+		
+		<link rel="icon" type="image/png" href="/favicon.ico" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="manifest" href="/manifest.json">
+		<link rel="alternate" type="application/rss+xml" title="PrintPro - Sistem Manajemen &amp; POS Percetakan Modern RSS Feed" href="/rss.xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="theme-color" content="#4f46e5">
+		
+		<!-- Safe event interception to prevent iframe Permissions Policy violations on unload event registration -->
+		<script>
+			(function() {
+				try {
+					if (typeof EventTarget !== 'undefined' && EventTarget.prototype) {
+						var originalAdd = EventTarget.prototype.addEventListener;
+						EventTarget.prototype.addEventListener = function(type, listener, options) {
+							if (type === 'unload') {
+								return;
+							}
+							return originalAdd.apply(this, arguments);
+						};
+						var originalRemove = EventTarget.prototype.removeEventListener;
+						EventTarget.prototype.removeEventListener = function(type, listener, options) {
+							if (type === 'unload') {
+								return;
+							}
+							return originalRemove.apply(this, arguments);
+						};
+					}
+					} catch (e) {
+					// Suppress safely
+				}
+			})();
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<!--
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-6PBHB1Y473"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'G-6PBHB1Y473');
+			</script>
+		-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<style>
+			:root {
+			/* Default Indigo Colors */
+			--brand-50: #f5f3ff;
+			--brand-100: #ede9fe;
+			--brand-200: #ddd6fe;
+			--brand-300: #c4b5fd;
+			--brand-400: #a78bfa;
+			--brand-500: #8b5cf6;
+			--brand-600: #4f46e5;
+			--brand-700: #4338ca;
+			--brand-800: #3730a3;
+			--brand-900: #312e81;
+			--brand-950: #1e1b4b;
+			}
+			
+			body { 
+			font-family: 'Inter', sans-serif; 
+			margin: 0; 
+			padding: 0; 
+			touch-action: pan-x pan-y;
+			}
+			.no-scrollbar::-webkit-scrollbar { display: none; }
+			.no-scrollbar { -ms-overflow-style: none;  scrollbar-width: none; }
+			
+			.swal2-popup {
+			border-radius: 2rem !important;
+			padding: 2rem !important;
+			}
+			.swal2-title {
+			font-weight: 900 !important;
+			letter-spacing: -0.025em !important;
+			}
+			.swal2-confirm {
+			background-color: var(--brand-600) !important;
+			border-radius: 1rem !important;
+			font-weight: 700 !important;
+			}
+			
+			@keyframes bell-ring {
+			0%, 100% { transform: rotate(0); }
+			20% { transform: rotate(15deg); }
+			40% { transform: rotate(-15deg); }
+			60% { transform: rotate(10deg); }
+			80% { transform: rotate(-10deg); }
+			}
+			.animate-ring {
+			animation: bell-ring 0.6s ease-in-out;
+			}
+			
+			/* Quill Editor Custom Styling */
+			.ql-toolbar.ql-snow {
+			border: 1px solid #e2e8f0 !important;
+			border-top-left-radius: 1.5rem !important;
+			border-top-right-radius: 1.5rem !important;
+			background-color: #f8fafc !important;
+			padding: 0.75rem !important;
+			}
+			.ql-container.ql-snow {
+			border: 1px solid #e2e8f0 !important;
+			border-bottom-left-radius: 1.5rem !important;
+			border-bottom-right-radius: 1.5rem !important;
+			background-color: #f8fafc !important;
+			font-family: 'Inter', sans-serif !important;
+			font-size: 14px !important;
+			min-height: 150px;
+			}
+			.ql-editor {
+			min-height: 150px;
+			}
+			.ql-editor.ql-blank::before {
+			color: #94a3b8 !important;
+			font-style: normal !important;
+			}
+			#devtools-warning{
 			position:fixed;
 			inset:0;
 			background:linear-gradient(135deg,#0f172a,#1e293b);
@@ -186,13 +190,13 @@
 			line-height:1.7;
 			color:#cbd5e1;
 			}
-  </style>
-  <script type="module" crossorigin src="/assets/index-Cf9_5xYH.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-D7wR7J5t.css">
-</head>
-<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
-  <div id="root"></div>
-  <div id="devtools-warning" style="display:none;">
+		</style>
+		<script type="module" crossorigin src="/assets/index-DKZ1uPfF.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-gkisWmOF.css">
+	</head>
+	<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
+		<div id="root"></div>
+		<div id="devtools-warning" style="display:none;">
 			<div class="warning-box">
 				<div class="icon">🛡️</div>
 				<h1>Akses Terbatas</h1>
@@ -202,41 +206,56 @@
 				</p>
 			</div>
 		</div>
-  <script>
-    if ('serviceWorker' in navigator && navigator.serviceWorker) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then(reg => {
-          console.log('SW registered:', reg);
-          
-          // Check for manual updates when the page is loaded
-          reg.onupdatefound = () => {
-            const installingWorker = reg.installing;
-            if (installingWorker) {
-              installingWorker.onstatechange = () => {
-                if (installingWorker.state === 'installed') {
-                  if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-                    console.log('New service worker content is available; please refresh.');
-                  }
-                }
-              };
-            }
-          };
-        }).catch(err => {
-          console.log('SW registration failed:', err);
-        });
-      });
-
-      // Handle controller change (reloads the page to let the new service worker take charge instantly)
-      let refreshing = false;
-      if (navigator.serviceWorker) {
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-          if (!refreshing) {
-            refreshing = true;
-            window.location.reload();
-          }
-        });
-      }
-    }
-  </script>
-</body>
+		<script>
+			setInterval(() => {
+				const devtoolsOpen =
+				window.outerWidth - window.innerWidth > 160 ||
+				window.outerHeight - window.innerHeight > 160;
+				
+				const warning = document.getElementById('devtools-warning');
+				
+				if (devtoolsOpen) {
+					warning.style.display = 'flex';
+					document.body.style.overflow = 'hidden';
+					} else {
+					warning.style.display = 'none';
+					document.body.style.overflow = '';
+				}
+			}, 1000);
+			if ('serviceWorker' in navigator && navigator.serviceWorker) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/sw.js').then(reg => {
+						console.log('SW registered:', reg);
+						
+						// Check for manual updates when the page is loaded
+						reg.onupdatefound = () => {
+							const installingWorker = reg.installing;
+							if (installingWorker) {
+								installingWorker.onstatechange = () => {
+									if (installingWorker.state === 'installed') {
+										if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+											console.log('New service worker content is available; please refresh.');
+										}
+									}
+								};
+							}
+						};
+						}).catch(err => {
+						console.log('SW registration failed:', err);
+					});
+				});
+				
+				// Handle controller change (reloads the page to let the new service worker take charge instantly)
+				let refreshing = false;
+				if (navigator.serviceWorker) {
+					navigator.serviceWorker.addEventListener('controllerchange', () => {
+						if (!refreshing) {
+							refreshing = true;
+							window.location.reload();
+						}
+					});
+				}
+			}
+		</script>
+	</body>
 </html>
