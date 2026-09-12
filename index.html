@@ -25,15 +25,15 @@
 		<meta name="twitter:image" content="/seo-banner.png">
 		
 		<link rel="icon" type="image/png" href="/favicon.ico" />
+  		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
 		<link rel="manifest" href="/manifest.json">
 		<link rel="alternate" type="application/rss+xml" title="PrintPro - Sistem Manajemen &amp; POS Percetakan Modern RSS Feed" href="/rss.xml" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
 		<meta name="theme-color" content="#4f46e5">
 		
 		<!-- Safe event interception to prevent iframe Permissions Policy violations on unload event registration -->
@@ -190,9 +190,9 @@
 			line-height:1.7;
 			color:#cbd5e1;
 			}
-		</style>
-		<script type="module" crossorigin src="/assets/index-DKZ1uPfF.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-gkisWmOF.css">
+		</style>
+		<script type="module" crossorigin src="/assets/index-CdXCsPGP.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-_AmHPGKV.css">
 	</head>
 	<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
 		<div id="root"></div>
@@ -205,23 +205,8 @@
 					beberapa fitur tidak dapat digunakan saat mode inspeksi aktif.
 				</p>
 			</div>
-		</div>
+		</div>
 		<script>
-			setInterval(() => {
-				const devtoolsOpen =
-				window.outerWidth - window.innerWidth > 160 ||
-				window.outerHeight - window.innerHeight > 160;
-				
-				const warning = document.getElementById('devtools-warning');
-				
-				if (devtoolsOpen) {
-					warning.style.display = 'flex';
-					document.body.style.overflow = 'hidden';
-					} else {
-					warning.style.display = 'none';
-					document.body.style.overflow = '';
-				}
-			}, 1000);
 			if ('serviceWorker' in navigator && navigator.serviceWorker) {
 				window.addEventListener('load', () => {
 					navigator.serviceWorker.register('/sw.js').then(reg => {
