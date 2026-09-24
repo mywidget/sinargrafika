@@ -3,7 +3,7 @@
 <html lang="id">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<title>PrintPro POS - POS Percetakan</title>
 		<meta name="description" content="Aplikasi kasir percetakan yang dirancang khusus untuk alur kerja percetakan. Pantau produksi cetak otomatis, kelola stok kertas, pantau cabang, kirim otomatis via WhatsApp Gateway, dan raih profit maksimal.">
 		<meta name="keywords" content="pos percetakan, aplikasi kasir, printpro pos, billing percetakan, software percetakan, aplikasi percetakan, cetak digital, kasir percetakan, whatsapp gateway">
@@ -25,10 +25,6 @@
 		<meta name="twitter:image" content="/seo-banner.png">
 		
 		<link rel="icon" type="image/png" href="/favicon.ico" />
-  		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
@@ -61,17 +57,7 @@
 				}
 			})();
 		</script>
-		<!-- Google tag (gtag.js) -->
-		<!--
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-6PBHB1Y473"></script>
-			<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			
-			gtag('config', 'G-6PBHB1Y473');
-			</script>
-		-->
+		<!-- Google Analytics & Google Tag Manager are dynamically injected via Vite and /services/analytics.ts from .env variables -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -190,11 +176,33 @@
 			line-height:1.7;
 			color:#cbd5e1;
 			}
-		</style>
-		<script type="module" crossorigin src="/assets/index-DwNhyhb0.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-0kThW-bK.css">
-	</head>
+		</style>
+		<script type="module" crossorigin src="/assets/index-Sgc2cqoc.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-iX9RJ0kk.css">
+	
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MTCF9956');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PBHB1Y473"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6PBHB1Y473', { send_page_view: true });
+    </script>
+    <!-- End Google Analytics -->
+</head>
 	<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTCF9956"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 		<div id="root"></div>
 		<div id="devtools-warning" style="display:none;">
 			<div class="warning-box">
@@ -205,8 +213,23 @@
 					beberapa fitur tidak dapat digunakan saat mode inspeksi aktif.
 				</p>
 			</div>
-		</div>
+		</div>
 		<script>
+			<!-- setInterval(() => { -->
+				<!-- const devtoolsOpen = -->
+				<!-- window.outerWidth - window.innerWidth > 160 || -->
+				<!-- window.outerHeight - window.innerHeight > 160; -->
+				
+				<!-- const warning = document.getElementById('devtools-warning'); -->
+				
+				<!-- if (devtoolsOpen) { -->
+					<!-- warning.style.display = 'flex'; -->
+					<!-- document.body.style.overflow = 'hidden'; -->
+					<!-- } else { -->
+					<!-- warning.style.display = 'none'; -->
+					<!-- document.body.style.overflow = ''; -->
+				<!-- } -->
+			<!-- }, 1000); -->
 			if ('serviceWorker' in navigator && navigator.serviceWorker) {
 				window.addEventListener('load', () => {
 					navigator.serviceWorker.register('/sw.js').then(reg => {
