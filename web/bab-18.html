@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18. Kas, Biaya, Uang Masuk, dan Buku Hutang — Panduan PrintPro POS</title>
+<meta name="description" content="Catat semua pengeluaran: listrik, sewa, gaji, pembelian kecil, transportasi. Buka Biaya / Kas Keluar . Isi tanggal, kategori, nominal, dan keterangan. Pilih aku…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="18. Kas, Biaya, Uang Masuk, dan Buku Hutang — Panduan PrintPro POS">
+<meta property="og:description" content="Catat semua pengeluaran: listrik, sewa, gaji, pembelian kecil, transportasi. Buka Biaya / Kas Keluar . Isi tanggal, kategori, nominal, dan keterangan. Pilih aku…">
+<meta property="og:url" content="https://printpro-panduan.qoder.site/bab-18.html">
+<meta name="theme-color" content="#f7f5f0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi panduan</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn" aria-label="Buka daftar bab" aria-expanded="false">
+    <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2"/></svg>
+  </button>
+  <a class="topbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PrintPro POS</a>
+  <span class="topbar-crumb"><span class="crumb-sep" aria-hidden="true">/</span><a href="bab-18.html">Bab 18</a></span>
+  <div class="topbar-actions">
+    <button type="button" class="icon-btn" id="searchBtn" aria-label="Cari dalam panduan">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">
+      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1M4.9 4.9a1 1 0 0 1 1.4 0l.7.7A1 1 0 0 1 5.6 7l-.7-.7a1 1 0 0 1 0-1.4m8.1 8.1a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4m1.4-8.1a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 13 7l.7-.7a1 1 0 0 1 1.4 0M6.3 13a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 4.2 13.7l.7-.7a1 1 0 0 1 1.4 0"/></svg>
+      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+    </button>
+  </div>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Daftar bab">
+    <div class="sidebar-head">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text"><strong>PrintPro POS</strong><small>Panduan operasional percetakan</small></span>
+      </a>
+    </div>
+    <div class="sidebar-search">
+      <button type="button" class="search-trigger" id="searchTrigger" aria-haspopup="dialog">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+        <span>Cari panduan…</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+    </div>
+    <ul class="nav-list"><li class="nav-item">
+        <a class="nav-link" href="bab-01.html">
+          <span class="nav-num">01</span>
+          <span class="nav-title">Masuk dan Memahami Aplikasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-02.html">
+          <span class="nav-num">02</span>
+          <span class="nav-title">Dashboard</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-03.html">
+          <span class="nav-num">03</span>
+          <span class="nav-title">Membuat Order Baru</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-04.html">
+          <span class="nav-num">04</span>
+          <span class="nav-title">Pembayaran, DP, dan Piutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-05.html">
+          <span class="nav-num">05</span>
+          <span class="nav-title">Production Board</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-06.html">
+          <span class="nav-num">06</span>
+          <span class="nav-title">Pekerjaan Selesai</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-07.html">
+          <span class="nav-num">07</span>
+          <span class="nav-title">Sistem Antrean</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-08.html">
+          <span class="nav-num">08</span>
+          <span class="nav-title">Manajemen Rak Penyimpanan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-09.html">
+          <span class="nav-num">09</span>
+          <span class="nav-title">Riwayat Transaksi dan Invoice</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-10.html">
+          <span class="nav-num">10</span>
+          <span class="nav-title">Surat Jalan dan Transaksi Antar Cabang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-11.html">
+          <span class="nav-num">11</span>
+          <span class="nav-title">Penawaran Harga (Quotation)</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-12.html">
+          <span class="nav-num">12</span>
+          <span class="nav-title">Jual Bahan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-13.html">
+          <span class="nav-num">13</span>
+          <span class="nav-title">Katalog, Kategori, dan Cetak Desain</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-14.html">
+          <span class="nav-num">14</span>
+          <span class="nav-title">Stok Bahan Baku, Baju, Buku, Undangan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-15.html">
+          <span class="nav-num">15</span>
+          <span class="nav-title">Pembelian Stok dan Supplier</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-16.html">
+          <span class="nav-num">16</span>
+          <span class="nav-title">Pelanggan dan Promosi WhatsApp</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-17.html">
+          <span class="nav-num">17</span>
+          <span class="nav-title">Tim Marketing</span>
+        </a></li><li class="nav-item is-open">
+        <a class="nav-link is-active" href="bab-18.html" aria-current="page">
+          <span class="nav-num">18</span>
+          <span class="nav-title">Kas, Biaya, Uang Masuk, dan Buku Hutang</span>
+        </a><ul class="nav-sub"><li><a href="bab-18.html#18-1-biaya-kas-keluar">Biaya / kas keluar</a></li><li><a href="bab-18.html#18-2-uang-masuk">Uang masuk</a></li><li><a href="bab-18.html#18-3-buku-hutang">Buku hutang</a></li><li><a href="bab-18.html#18-4-rekening-bank">Rekening bank</a></li><li><a href="bab-18.html#18-5-tutup-kas-harian">Tutup kas harian</a></li></ul></li><li class="nav-item">
+        <a class="nav-link" href="bab-19.html">
+          <span class="nav-num">19</span>
+          <span class="nav-title">Akuntansi dan Jurnal</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-20.html">
+          <span class="nav-num">20</span>
+          <span class="nav-title">Payroll, Kasbon, dan Presensi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-21.html">
+          <span class="nav-num">21</span>
+          <span class="nav-title">Laporan dan Grafik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-22.html">
+          <span class="nav-num">22</span>
+          <span class="nav-title">Cabang, Staff, Hak Akses, dan Pengaturan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-23.html">
+          <span class="nav-num">23</span>
+          <span class="nav-title">Langganan dan Billing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-24.html">
+          <span class="nav-num">24</span>
+          <span class="nav-title">Halaman Publik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-25.html">
+          <span class="nav-num">25</span>
+          <span class="nav-title">Mode Offline dan Sinkronisasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-26.html">
+          <span class="nav-num">26</span>
+          <span class="nav-title">Backup, Restore, dan Keamanan Data</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-27.html">
+          <span class="nav-num">27</span>
+          <span class="nav-title">Tips dan Kebiasaan Kerja yang Disarankan</span>
+        </a></li></ul>
+    <div class="sidebar-foot">
+      <a href="index.html">Ringkasan &amp; alur kerja</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Ganti tema terang atau gelap">
+        <svg class="i-sun" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1"/></svg>
+        <svg class="i-moon" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+        <span>Tema</span>
+      </button>
+    </div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main class="main" id="main">
+    <article class="prose"><header class="chapter-head">
+      <p class="eyebrow">Bab 18 dari 27</p>
+      <h1>Kas, Biaya, Uang Masuk, dan Buku Hutang</h1>
+      <p class="chapter-meta">8 bagian · ±8 blok pencarian</p>
+    </header>
+    <h2 id="18-1-biaya-kas-keluar">18.1 Biaya / kas keluar</h2>
+<p>Catat semua pengeluaran: listrik, sewa, gaji, pembelian kecil, transportasi.</p>
+<ol>
+<li>Buka <strong>Biaya / Kas Keluar</strong>.</li>
+<li>Isi tanggal, kategori, nominal, dan keterangan.</li>
+<li>Pilih akun kas/bank bila akuntansi aktif.</li>
+<li>Lampirkan bukti bila perlu.</li>
+</ol>
+<h3 id="alur-crud-biaya-kas-keluar">Alur CRUD biaya / kas keluar</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Biaya / Kas Keluar</strong> menampilkan filter rentang tanggal, tombol <strong>EXPORT EXCEL</strong> dan <strong>CETAK PDF</strong>, ringkasan <strong>Total Pengeluaran</strong> serta <strong>Total Data</strong>, dan tabel catatan biaya. Rentang tanggal default adalah hari ini, jadi kosongkan filter atau perluas tanggal untuk melihat catatan lama.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/01-daftar-awal.png" alt="Daftar kas keluar" loading="lazy"><figcaption>Gambar 18.1 — Kas Keluar sebelum ada catatan pada rentang tanggal berjalan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah biaya</strong> — Klik <strong>+ CATAT BIAYA</strong>. Panel <strong>Input Kas Keluar</strong> terbuka berisi pilihan akun biaya (COA), metode pembayaran, tanggal transaksi, nominal, keterangan, dan lampiran bukti.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/02-form-tambah.png" alt="Form biaya baru" loading="lazy"><figcaption>Gambar 18.2 — Panel input kas keluar yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Pilih <strong>Akun Biaya (COA)</strong>, tentukan <strong>Metode Pembayaran</strong>, lalu isi tanggal, nominal, dan keterangan. Metode <strong>TRANSFER</strong> memunculkan pilihan <strong>Bank Sumber</strong>; metode <strong>TEMPO / HUTANG</strong> memunculkan isian <strong>DP / Bayar Pertama</strong> dan <strong>Jatuh Tempo</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/03-form-terisi.png" alt="Form biaya terisi" loading="lazy"><figcaption>Gambar 18.3 — Catatan biaya listrik dengan metode transfer ke rekening BCA.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>SIMPAN DATA</strong>. Catatan tampil pada tabel lengkap dengan kategori COA, tanggal, nominal, metode, rekening, dan cabang, sementara ringkasan total ikut diperbarui. Jika saldo kas/bank tidak mencukupi, sistem menolak penyimpanan dengan peringatan <strong>Saldo Tidak Mencukupi</strong> agar saldo tidak minus.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/04-hasil-tambah.png" alt="Hasil tambah biaya" loading="lazy"><figcaption>Gambar 18.4 — Catatan biaya baru tampil pada daftar dan total pengeluaran bertambah.</figcaption></figure>
+</li>
+<li><p><strong>Hapus biaya</strong> — Modul ini tidak menyediakan tombol ubah; koreksi dilakukan dengan menghapus lalu mencatat ulang. Klik ikon hapus pada baris, lalu tekan <strong>Ya, Hapus</strong> pada dialog <strong>Hapus Kas Keluar?</strong>. Jurnal akuntansi terkait ikut terhapus.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/05-konfirmasi-hapus.png" alt="Konfirmasi hapus biaya" loading="lazy"><figcaption>Gambar 18.5 — Dialog konfirmasi hapus catatan kas keluar.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Catatan uji hilang dan ringkasan total kembali nol.</p>
+<figure class="shot"><img src="assets/img/crud-biaya/06-hasil-hapus.png" alt="Hasil hapus biaya" loading="lazy"><figcaption>Gambar 18.6 — Daftar kembali kosong setelah catatan uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Catat biaya pada hari yang sama dengan transaksinya agar laporan harian dan tutup kas cocok. Untuk pengeluaran rutin bernilai besar, pilih metode <strong>TEMPO / HUTANG</strong> bila pembayarannya belum dilakukan supaya saldo kas tidak terpotong sebelum waktunya.</p>
+<h2 id="18-2-uang-masuk">18.2 Uang masuk</h2>
+<p>Mencatat penerimaan selain penjualan order, misalnya pelunasan piutang, setoran modal, atau pendapatan lain.</p>
+<h3 id="alur-penggunaan-uang-masuk">Alur penggunaan uang masuk</h3>
+<ol>
+<li><p><strong>Buka laporan</strong> — Menu <strong>Uang Masuk</strong> (judul <strong>Uang Masuk &amp; Laporan FO</strong>) merangkum penerimaan per metode: total masuk, tunai, transfer, QRIS, debit, dan kartu kredit. Gunakan filter cabang serta periode <strong>Hari Ini</strong>, <strong>Kemarin</strong>, <strong>Bulan Ini</strong>, <strong>Bulan Lalu</strong>, atau <strong>Semua</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-uang-masuk/01-ringkasan.png" alt="Ringkasan uang masuk" loading="lazy"><figcaption>Gambar 18.7 — Rekap per FO dengan periode Semua dan filter cabang Head Office.</figcaption></figure>
+</li>
+<li><p><strong>Telusuri rincian</strong> — Tab <strong>Rincian Transaksi</strong> menampilkan setiap pembayaran: nomor invoice, tanggal invoice, konsumen, tanggal bayar, FO kasir, metode/bank, lampiran bukti, dan jumlah. Persempit data lewat filter metode, filter FO, rentang tanggal, serta kolom <strong>No. Invoice / Konsumen</strong>; klik nomor invoice untuk membuka detail pesanan.</p>
+<figure class="shot"><img src="assets/img/crud-uang-masuk/02-rincian-per-fo.png" alt="Rincian per FO" loading="lazy"><figcaption>Gambar 18.8 — Rincian transaksi satu staf FO beserta tautan bukti transfer.</figcaption></figure>
+</li>
+<li><p><strong>Kirim laporan harian</strong> — Tab <strong>Laporan Harian WA</strong> menghasilkan teks laporan siap kirim: jumlah konsumen, omset, bayar, piutang, uang masuk per metode, order batal, dan total. Pilih tanggal laporan lalu gunakan <strong>Salin</strong> atau <strong>Kirim ke WhatsApp Grup</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-uang-masuk/03-laporan-harian-wa.png" alt="Laporan harian WA" loading="lazy"><figcaption>Gambar 18.9 — Laporan harian 25 Oktober 2026 siap dikirim ke grup WhatsApp.</figcaption></figure>
+</li>
+</ol>
+<p>Halaman ini bersifat laporan (baca saja): catatan uang masuk terbentuk otomatis dari pembayaran order, sehingga koreksi dilakukan di <strong>Riwayat Transaksi</strong> (membatalkan atau mencatat ulang pembayaran), bukan dari halaman ini.</p>
+<h2 id="18-3-buku-hutang">18.3 Buku hutang</h2>
+<p>Memantau hutang ke supplier dan piutang pelanggan. Tandai pembayaran agar saldo akurat.</p>
+<h2 id="18-4-rekening-bank">18.4 Rekening bank</h2>
+<p>Daftarkan rekening toko yang digunakan untuk transfer/QRIS. Rekening dapat dipilih saat mencatat pembayaran dan tercetak di invoice.</p>
+<h3 id="alur-crud-rekening-bank">Alur CRUD rekening bank</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Rekening Bank</strong> menampilkan daftar rekening aktif dengan filter cabang dan kolom pencarian. Setiap baris memuat bank, nomor rekening, atas nama, cabang, status, serta tombol aksi.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/01-daftar-awal.png" alt="Daftar rekening" loading="lazy"><figcaption>Gambar 18.10 — Daftar rekening bank sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah rekening</strong> — Klik <strong>TAMBAH REKENING</strong>. Formulir rekening baris baru terbuka di bagian atas tabel.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/02-form-tambah.png" alt="Form rekening baru" loading="lazy"><figcaption>Gambar 18.11 — Formulir rekening bank yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi data rekening</strong> — Pilih <strong>Bank</strong>, lalu isi nomor rekening, atas nama, cabang, akun akuntansi (COA), dan status. Tandai rekening utama bila dipakai sebagai tujuan transfer default.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/03-form-terisi.png" alt="Form rekening terisi" loading="lazy"><figcaption>Gambar 18.12 — Data rekening baru yang sudah diisi lengkap dengan akun akuntansi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>SIMPAN</strong>. Rekening baru tampil pada daftar dan jumlah rekening aktif bertambah.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/04-hasil-tambah.png" alt="Hasil tambah rekening" loading="lazy"><figcaption>Gambar 18.13 — Rekening baru tampil pada daftar.</figcaption></figure>
+</li>
+<li><p><strong>Ubah rekening</strong> — Klik ikon edit pada baris rekening, lalu perbarui data yang perlu dikoreksi.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/05-form-edit.png" alt="Form ubah rekening" loading="lazy"><figcaption>Gambar 18.14 — Form ubah rekening yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah <strong>SIMPAN</strong>, nama bank atau atas nama yang baru langsung tampil pada baris daftar.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/06-hasil-edit.png" alt="Hasil ubah rekening" loading="lazy"><figcaption>Gambar 18.15 — Atas nama rekening yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus rekening</strong> — Klik ikon hapus pada baris rekening, lalu tekan <strong>Ya, Hapus!</strong> pada dialog <strong>Hapus Rekening?</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/07-konfirmasi-hapus.png" alt="Konfirmasi hapus rekening" loading="lazy"><figcaption>Gambar 18.16 — Dialog konfirmasi hapus rekening bank.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Rekening uji hilang dan jumlah rekening aktif kembali seperti semula.</p>
+<figure class="shot"><img src="assets/img/crud-rekening/08-hasil-hapus.png" alt="Hasil hapus rekening" loading="lazy"><figcaption>Gambar 18.17 — Daftar rekening kembali normal setelah rekening uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Hindari menghapus rekening yang sudah dipakai pembayaran lama; nonaktifkan statusnya agar riwayat tetap utuh dan rekening tidak lagi muncul sebagai pilihan pembayaran.</p>
+<h2 id="18-5-tutup-kas-harian">18.5 Tutup kas harian</h2>
+<p>Disarankan setiap akhir hari:</p>
+<ol>
+<li>Cocokkan uang fisik dengan total pembayaran tunai.</li>
+<li>Catat selisih bila ada.</li>
+<li>Pastikan semua biaya hari itu sudah dicatat.</li>
+<li>Simpan laporan harian.</li>
+</ol>
+<hr>
+</article>
+    <nav class="pager" aria-label="Navigasi bab">
+        <a class="pager-link" href="bab-17.html"><small>Bab sebelumnya</small><span>17 · Tim Marketing</span></a>
+        <a class="pager-link pager-next" href="bab-19.html"><small>Bab berikutnya</small><span>19 · Akuntansi dan Jurnal</span></a>
+      </nav>
+    <footer class="pagefoot">
+      <span>Bersumber dari <code>PANDUAN_PENGGUNAAN.md</code> aplikasi PrintPro POS.</span>
+      <a href="#main" class="to-top">Kembali ke atas ↑</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="Pada halaman ini">
+    <p class="toc-title">Pada halaman ini</p>
+    <ul><li class="toc-l2"><a href="#18-1-biaya-kas-keluar" data-toc="18-1-biaya-kas-keluar">18.1 Biaya / kas keluar</a></li><li class="toc-l3"><a href="#alur-crud-biaya-kas-keluar" data-toc="alur-crud-biaya-kas-keluar">Alur CRUD biaya / kas keluar</a></li><li class="toc-l2"><a href="#18-2-uang-masuk" data-toc="18-2-uang-masuk">18.2 Uang masuk</a></li><li class="toc-l3"><a href="#alur-penggunaan-uang-masuk" data-toc="alur-penggunaan-uang-masuk">Alur penggunaan uang masuk</a></li><li class="toc-l2"><a href="#18-3-buku-hutang" data-toc="18-3-buku-hutang">18.3 Buku hutang</a></li><li class="toc-l2"><a href="#18-4-rekening-bank" data-toc="18-4-rekening-bank">18.4 Rekening bank</a></li><li class="toc-l3"><a href="#alur-crud-rekening-bank" data-toc="alur-crud-rekening-bank">Alur CRUD rekening bank</a></li><li class="toc-l2"><a href="#18-5-tutup-kas-harian" data-toc="18-5-tutup-kas-harian">18.5 Tutup kas harian</a></li></ul>
+  </aside>
+</div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button class="lb-close" id="lbClose" aria-label="Tutup gambar">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Gambar sebelumnya">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Gambar berikutnya">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+<div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Cari dalam panduan">
+  <div class="palette-box">
+    <div class="palette-input">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+      <input id="q" type="search" placeholder="Cari: DP, piutang, opname stok, kiosk antrean…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="palette-meta" id="paletteMeta"></div>
+    <ul class="results" id="results" role="listbox" aria-label="Hasil pencarian"></ul>
+    <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> pilih · <kbd>Enter</kbd> buka · pencarian mencakup judul bab, sub-bab, dan isi panduan</p>
+  </div>
+</div>
+</body>
+</html>

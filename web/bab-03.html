@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Membuat Order Baru — Panduan PrintPro POS</title>
+<meta name="description" content="Menu Order Baru adalah inti operasional percetakan.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3. Membuat Order Baru — Panduan PrintPro POS">
+<meta property="og:description" content="Menu Order Baru adalah inti operasional percetakan.">
+<meta property="og:url" content="https://printpro-panduan.qoder.site/bab-03.html">
+<meta name="theme-color" content="#f7f5f0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi panduan</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn" aria-label="Buka daftar bab" aria-expanded="false">
+    <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2"/></svg>
+  </button>
+  <a class="topbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PrintPro POS</a>
+  <span class="topbar-crumb"><span class="crumb-sep" aria-hidden="true">/</span><a href="bab-03.html">Bab 3</a></span>
+  <div class="topbar-actions">
+    <button type="button" class="icon-btn" id="searchBtn" aria-label="Cari dalam panduan">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">
+      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1M4.9 4.9a1 1 0 0 1 1.4 0l.7.7A1 1 0 0 1 5.6 7l-.7-.7a1 1 0 0 1 0-1.4m8.1 8.1a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4m1.4-8.1a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 13 7l.7-.7a1 1 0 0 1 1.4 0M6.3 13a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 4.2 13.7l.7-.7a1 1 0 0 1 1.4 0"/></svg>
+      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+    </button>
+  </div>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Daftar bab">
+    <div class="sidebar-head">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text"><strong>PrintPro POS</strong><small>Panduan operasional percetakan</small></span>
+      </a>
+    </div>
+    <div class="sidebar-search">
+      <button type="button" class="search-trigger" id="searchTrigger" aria-haspopup="dialog">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+        <span>Cari panduan…</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+    </div>
+    <ul class="nav-list"><li class="nav-item">
+        <a class="nav-link" href="bab-01.html">
+          <span class="nav-num">01</span>
+          <span class="nav-title">Masuk dan Memahami Aplikasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-02.html">
+          <span class="nav-num">02</span>
+          <span class="nav-title">Dashboard</span>
+        </a></li><li class="nav-item is-open">
+        <a class="nav-link is-active" href="bab-03.html" aria-current="page">
+          <span class="nav-num">03</span>
+          <span class="nav-title">Membuat Order Baru</span>
+        </a><ul class="nav-sub"><li><a href="bab-03.html#3-1-langkah-membuat-order">Langkah membuat order</a></li><li><a href="bab-03.html#3-2-tipe-harga-produk">Tipe harga produk</a></li><li><a href="bab-03.html#3-3-status-order">Status order</a></li><li><a href="bab-03.html#3-4-hal-yang-sering-terlewat">Hal yang sering terlewat</a></li></ul></li><li class="nav-item">
+        <a class="nav-link" href="bab-04.html">
+          <span class="nav-num">04</span>
+          <span class="nav-title">Pembayaran, DP, dan Piutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-05.html">
+          <span class="nav-num">05</span>
+          <span class="nav-title">Production Board</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-06.html">
+          <span class="nav-num">06</span>
+          <span class="nav-title">Pekerjaan Selesai</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-07.html">
+          <span class="nav-num">07</span>
+          <span class="nav-title">Sistem Antrean</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-08.html">
+          <span class="nav-num">08</span>
+          <span class="nav-title">Manajemen Rak Penyimpanan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-09.html">
+          <span class="nav-num">09</span>
+          <span class="nav-title">Riwayat Transaksi dan Invoice</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-10.html">
+          <span class="nav-num">10</span>
+          <span class="nav-title">Surat Jalan dan Transaksi Antar Cabang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-11.html">
+          <span class="nav-num">11</span>
+          <span class="nav-title">Penawaran Harga (Quotation)</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-12.html">
+          <span class="nav-num">12</span>
+          <span class="nav-title">Jual Bahan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-13.html">
+          <span class="nav-num">13</span>
+          <span class="nav-title">Katalog, Kategori, dan Cetak Desain</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-14.html">
+          <span class="nav-num">14</span>
+          <span class="nav-title">Stok Bahan Baku, Baju, Buku, Undangan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-15.html">
+          <span class="nav-num">15</span>
+          <span class="nav-title">Pembelian Stok dan Supplier</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-16.html">
+          <span class="nav-num">16</span>
+          <span class="nav-title">Pelanggan dan Promosi WhatsApp</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-17.html">
+          <span class="nav-num">17</span>
+          <span class="nav-title">Tim Marketing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-18.html">
+          <span class="nav-num">18</span>
+          <span class="nav-title">Kas, Biaya, Uang Masuk, dan Buku Hutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-19.html">
+          <span class="nav-num">19</span>
+          <span class="nav-title">Akuntansi dan Jurnal</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-20.html">
+          <span class="nav-num">20</span>
+          <span class="nav-title">Payroll, Kasbon, dan Presensi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-21.html">
+          <span class="nav-num">21</span>
+          <span class="nav-title">Laporan dan Grafik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-22.html">
+          <span class="nav-num">22</span>
+          <span class="nav-title">Cabang, Staff, Hak Akses, dan Pengaturan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-23.html">
+          <span class="nav-num">23</span>
+          <span class="nav-title">Langganan dan Billing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-24.html">
+          <span class="nav-num">24</span>
+          <span class="nav-title">Halaman Publik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-25.html">
+          <span class="nav-num">25</span>
+          <span class="nav-title">Mode Offline dan Sinkronisasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-26.html">
+          <span class="nav-num">26</span>
+          <span class="nav-title">Backup, Restore, dan Keamanan Data</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-27.html">
+          <span class="nav-num">27</span>
+          <span class="nav-title">Tips dan Kebiasaan Kerja yang Disarankan</span>
+        </a></li></ul>
+    <div class="sidebar-foot">
+      <a href="index.html">Ringkasan &amp; alur kerja</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Ganti tema terang atau gelap">
+        <svg class="i-sun" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1"/></svg>
+        <svg class="i-moon" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+        <span>Tema</span>
+      </button>
+    </div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main class="main" id="main">
+    <article class="prose"><header class="chapter-head">
+      <p class="eyebrow">Bab 03 dari 27</p>
+      <h1>Membuat Order Baru</h1>
+      <p class="chapter-meta">5 bagian · ±6 blok pencarian</p>
+    </header>
+    <p>Menu <strong>Order Baru</strong> adalah inti operasional percetakan.</p>
+<h2 id="3-1-langkah-membuat-order">3.1 Langkah membuat order</h2>
+<ol>
+<li>Buka <strong>Order Baru</strong>.</li>
+<li>Pilih atau buat <strong>pelanggan</strong>. Untuk pelanggan baru, isi nama, nomor telepon/WhatsApp, dan alamat.</li>
+<li>Tambahkan <strong>item</strong>:<ul>
+<li>Pilih produk/layanan dari katalog, atau</li>
+<li>Isi item manual dengan nama, ukuran, jumlah, dan harga.</li>
+</ul>
+</li>
+<li>Sesuaikan <strong>spesifikasi</strong>: bahan, ukuran, jumlah sisi, finishing, warna, atau catatan desain.</li>
+<li>Atur <strong>diskon</strong> (nominal atau persen) dan <strong>pajak</strong> bila diperlukan.</li>
+<li>Pilih <strong>metode pembayaran</strong> dan masukkan jumlah yang dibayar.</li>
+<li>Tentukan <strong>cabang</strong> (untuk pengguna multi-cabang).</li>
+<li>Simpan. Nomor invoice dibuat otomatis.</li>
+</ol>
+<figure class="shot"><img src="assets/img/03-order-baru.png" alt="Halaman Order Baru" loading="lazy"><figcaption>Gambar 3.1 — Order Baru: pencarian produk, data pelanggan, spesifikasi, dan pembayaran.</figcaption></figure>
+<h3 id="alur-input-order">Alur input order</h3>
+<ol>
+<li><p><strong>Buka halaman Order Baru</strong> — Klik menu <strong>Order Baru</strong>. Area kiri menampilkan <strong>Ringkasan Pesanan</strong> dengan pencarian produk dan tombol <strong>List Produk</strong>; sisi kanan menampilkan kartu <strong>Data Pelanggan</strong> dan tombol <strong>BUAT ORDER</strong> yang masih tidak aktif selama keranjang kosong.</p>
+<figure class="shot"><img src="assets/img/input-order/01-halaman-order-baru.png" alt="Halaman Order Baru" loading="lazy"><figcaption>Gambar 3.2 — Halaman Order Baru dengan keranjang kosong.</figcaption></figure>
+</li>
+<li><p><strong>Cari produk</strong> — Ketik nama layanan pada kolom <strong>Cari layanan / produk untuk ditambahkan...</strong>. Hasil pencocokan muncul sebagai dropdown berisi nama produk, tipe harga, dan stok.</p>
+<figure class="shot"><img src="assets/img/input-order/02-pencarian-produk.png" alt="Pencarian produk" loading="lazy"><figcaption>Gambar 3.3 — Hasil pencarian produk &quot;banner&quot;.</figcaption></figure>
+</li>
+<li><p><strong>Konfigurasi item</strong> — Klik produk untuk membuka panel item. Untuk tipe <code>DIMENSION</code>, isi <strong>Panjang (m)</strong>, <strong>Lebar (m)</strong>, dan <strong>Jumlah</strong>; luas dan <strong>Subtotal Item</strong> terhitung otomatis. Lengkapi opsi seperti <strong>Lebar Rol</strong>, <strong>Jasa Desain</strong>, <strong>Proses Cetak/Finishing</strong>, <strong>BOM</strong>, atau <strong>Catatan Item</strong> bila perlu.</p>
+<figure class="shot"><img src="assets/img/input-order/03-konfigurasi-item.png" alt="Konfigurasi item" loading="lazy"><figcaption>Gambar 3.4 — Panel item Banner Flexi 280gr: ukuran 4 m × 0,8 m, jumlah 2, subtotal Rp 128.000.</figcaption></figure>
+</li>
+<li><p><strong>Isi data pelanggan</strong> — Pada kartu ungu <strong>Data Pelanggan</strong>, masukkan <strong>Nama Pelanggan</strong> dan <strong>Nomor WhatsApp</strong>. Pelanggan baru ditandai badge <strong>PELANGGAN BARU</strong>; jika nama/nomor sudah terdaftar, sistem menampilkan level member, poin, dan tombol <strong>Riwayat &amp; Nego Harga</strong>.</p>
+<figure class="shot"><img src="assets/img/input-order/04-data-pelanggan.png" alt="Data pelanggan" loading="lazy"><figcaption>Gambar 3.5 — Kartu Data Pelanggan untuk pelanggan baru.</figcaption></figure>
+</li>
+<li><p><strong>Atur diskon dan pembayaran</strong> — Klik <strong>Tampilkan Rincian</strong> untuk membuka blok ringkasan: <strong>Gross</strong>, <strong>Diskon</strong> (nominal atau persen), <strong>PPN</strong>, <strong>Tanggal &amp; Jam</strong>, <strong>Deadline</strong>, serta <strong>Metode Pembayaran</strong>. Untuk uang muka, pilih metode <strong>DP</strong>, tentukan <strong>Metode Bayar DP</strong> (tunai/transfer/QRIS), lalu gunakan pintasan <strong>20% / 30% / 50% DP</strong> atau <strong>Pas / Lunas</strong>. Sistem menampilkan <strong>DP Terbayar</strong> dan <strong>Sisa Tagihan (Piutang)</strong> yang otomatis masuk jurnal.</p>
+<figure class="shot"><img src="assets/img/input-order/05-pembayaran-dp.png" alt="Pembayaran DP" loading="lazy"><figcaption>Gambar 3.6 — Pembayaran DP 50%: DP Rp 60.000, sisa tagihan (piutang) Rp 60.000.</figcaption></figure>
+</li>
+<li><p><strong>Simpan order</strong> — Klik <strong>BUAT ORDER</strong>. Nomor invoice dibuat otomatis (mis. <code>#A000001</code>) dan modal <strong>Dokumen Penjualan</strong> muncul berisi pratinjau nota beserta pilihan format cetak (Faktur/Nota, Thermal, A4, Dot Matrix, Instruksi SPK), <strong>Salin Link Invoice</strong>, dan <strong>Kirim WA</strong>.</p>
+<figure class="shot"><img src="assets/img/input-order/06-hasil-buat-order.png" alt="Hasil buat order" loading="lazy"><figcaption>Gambar 3.7 — Nota hasil input order dengan metode DP.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi</strong> — Buka <strong>Riwayat Transaksi</strong>. Order baru tampil lengkap dengan pelanggan, cabang &amp; kasir, status, nilai transaksi, dan sisa tagihan.</p>
+<figure class="shot"><img src="assets/img/input-order/07-riwayat-setelah-order.png" alt="Riwayat setelah order" loading="lazy"><figcaption>Gambar 3.8 — Order #A000001 muncul di Riwayat Transaksi dengan sisa Rp 60.000.</figcaption></figure>
+</li>
+</ol>
+<h2 id="3-2-tipe-harga-produk">3.2 Tipe harga produk</h2>
+<p>Saat menambahkan item, perhatikan tipe perhitungan harga:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Tipe</th>
+<th>Perhitungan</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>UNIT</code></td>
+<td>Harga × jumlah</td>
+</tr>
+<tr>
+<td><code>DIMENSION</code></td>
+<td>Harga × luas (m²) × jumlah</td>
+</tr>
+<tr>
+<td><code>DIMENSION_CM</code></td>
+<td>Harga × luas (cm²) × jumlah</td>
+</tr>
+<tr>
+<td><code>TIME</code></td>
+<td>Harga × durasi</td>
+</tr>
+<tr>
+<td><code>DIMENSION_TIME</code></td>
+<td>Harga × luas × durasi</td>
+</tr>
+<tr>
+<td><code>CUSTOM</code></td>
+<td>Harga diisi manual</td>
+</tr>
+<tr>
+<td><code>DIMENSION_CUSTOM</code></td>
+<td>Luas dihitung, harga final manual</td>
+</tr>
+<tr>
+<td><code>DIMENSION_CM_CUSTOM</code></td>
+<td>Luas cm dihitung, harga final manual</td>
+</tr>
+</tbody></table></div>
+<p>Pastikan satuan yang dipakai konsisten. Kesalahan satuan adalah penyebab utama selisih harga.</p>
+<h2 id="3-3-status-order">3.3 Status order</h2>
+<p>Alur normal:</p>
+<ol class="flow" aria-label="Urutan status"><li><span>PENDING</span></li><li><span>DESIGNING</span></li><li><span>PRINTING</span></li><li><span>FINISHING</span></li><li><span>READY</span></li><li><span>DONE</span></li></ol>
+<p>Status tambahan:</p>
+<ul>
+<li><code>CANCELLED</code> — order dibatalkan. Catat alasannya.</li>
+<li><code>RETURNED</code> — order dikembalikan/di-revisi.</li>
+</ul>
+<p>Status dapat diubah dari Production Board, detail order, atau halaman Riwayat Transaksi. Setiap perubahan sebaiknya disertai catatan agar riwayat jelas.</p>
+<h2 id="3-4-hal-yang-sering-terlewat">3.4 Hal yang sering terlewat</h2>
+<ul>
+<li>Nomor WhatsApp pelanggan untuk notifikasi otomatis.</li>
+<li>Tenggat waktu (deadline) yang realistis.</li>
+<li>File desain yang sudah disetujui pelanggan.</li>
+<li>Uang muka (DP) bila order bernilai besar.</li>
+<li>Cabang tujuan produksi untuk order antar cabang.</li>
+</ul>
+<hr>
+</article>
+    <nav class="pager" aria-label="Navigasi bab">
+        <a class="pager-link" href="bab-02.html"><small>Bab sebelumnya</small><span>02 · Dashboard</span></a>
+        <a class="pager-link pager-next" href="bab-04.html"><small>Bab berikutnya</small><span>04 · Pembayaran, DP, dan Piutang</span></a>
+      </nav>
+    <footer class="pagefoot">
+      <span>Bersumber dari <code>PANDUAN_PENGGUNAAN.md</code> aplikasi PrintPro POS.</span>
+      <a href="#main" class="to-top">Kembali ke atas ↑</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="Pada halaman ini">
+    <p class="toc-title">Pada halaman ini</p>
+    <ul><li class="toc-l2"><a href="#3-1-langkah-membuat-order" data-toc="3-1-langkah-membuat-order">3.1 Langkah membuat order</a></li><li class="toc-l3"><a href="#alur-input-order" data-toc="alur-input-order">Alur input order</a></li><li class="toc-l2"><a href="#3-2-tipe-harga-produk" data-toc="3-2-tipe-harga-produk">3.2 Tipe harga produk</a></li><li class="toc-l2"><a href="#3-3-status-order" data-toc="3-3-status-order">3.3 Status order</a></li><li class="toc-l2"><a href="#3-4-hal-yang-sering-terlewat" data-toc="3-4-hal-yang-sering-terlewat">3.4 Hal yang sering terlewat</a></li></ul>
+  </aside>
+</div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button class="lb-close" id="lbClose" aria-label="Tutup gambar">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Gambar sebelumnya">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Gambar berikutnya">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+<div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Cari dalam panduan">
+  <div class="palette-box">
+    <div class="palette-input">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+      <input id="q" type="search" placeholder="Cari: DP, piutang, opname stok, kiosk antrean…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="palette-meta" id="paletteMeta"></div>
+    <ul class="results" id="results" role="listbox" aria-label="Hasil pencarian"></ul>
+    <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> pilih · <kbd>Enter</kbd> buka · pencarian mencakup judul bab, sub-bab, dan isi panduan</p>
+  </div>
+</div>
+</body>
+</html>

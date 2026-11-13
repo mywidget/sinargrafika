@@ -1,5 +1,9 @@
 
+<<<<<<< Updated upstream
+const CACHE_NAME = 'printpro-cache-v1794565798922';
+=======
 const CACHE_NAME = 'printpro-cache-v1793635634651';
+>>>>>>> Stashed changes
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html'

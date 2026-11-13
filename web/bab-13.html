@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13. Katalog, Kategori, dan Cetak Desain — Panduan PrintPro POS</title>
+<meta name="description" content="Menu Katalog Layanan berisi produk/layanan yang dijual. Tambah produk: nama, kategori, tipe harga, harga dasar, satuan, dan deskripsi. Atur produk aktif/nonakti…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="13. Katalog, Kategori, dan Cetak Desain — Panduan PrintPro POS">
+<meta property="og:description" content="Menu Katalog Layanan berisi produk/layanan yang dijual. Tambah produk: nama, kategori, tipe harga, harga dasar, satuan, dan deskripsi. Atur produk aktif/nonakti…">
+<meta property="og:url" content="https://printpro-panduan.qoder.site/bab-13.html">
+<meta name="theme-color" content="#f7f5f0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi panduan</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn" aria-label="Buka daftar bab" aria-expanded="false">
+    <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2"/></svg>
+  </button>
+  <a class="topbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PrintPro POS</a>
+  <span class="topbar-crumb"><span class="crumb-sep" aria-hidden="true">/</span><a href="bab-13.html">Bab 13</a></span>
+  <div class="topbar-actions">
+    <button type="button" class="icon-btn" id="searchBtn" aria-label="Cari dalam panduan">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">
+      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1M4.9 4.9a1 1 0 0 1 1.4 0l.7.7A1 1 0 0 1 5.6 7l-.7-.7a1 1 0 0 1 0-1.4m8.1 8.1a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4m1.4-8.1a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 13 7l.7-.7a1 1 0 0 1 1.4 0M6.3 13a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 4.2 13.7l.7-.7a1 1 0 0 1 1.4 0"/></svg>
+      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+    </button>
+  </div>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Daftar bab">
+    <div class="sidebar-head">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text"><strong>PrintPro POS</strong><small>Panduan operasional percetakan</small></span>
+      </a>
+    </div>
+    <div class="sidebar-search">
+      <button type="button" class="search-trigger" id="searchTrigger" aria-haspopup="dialog">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+        <span>Cari panduan…</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+    </div>
+    <ul class="nav-list"><li class="nav-item">
+        <a class="nav-link" href="bab-01.html">
+          <span class="nav-num">01</span>
+          <span class="nav-title">Masuk dan Memahami Aplikasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-02.html">
+          <span class="nav-num">02</span>
+          <span class="nav-title">Dashboard</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-03.html">
+          <span class="nav-num">03</span>
+          <span class="nav-title">Membuat Order Baru</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-04.html">
+          <span class="nav-num">04</span>
+          <span class="nav-title">Pembayaran, DP, dan Piutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-05.html">
+          <span class="nav-num">05</span>
+          <span class="nav-title">Production Board</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-06.html">
+          <span class="nav-num">06</span>
+          <span class="nav-title">Pekerjaan Selesai</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-07.html">
+          <span class="nav-num">07</span>
+          <span class="nav-title">Sistem Antrean</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-08.html">
+          <span class="nav-num">08</span>
+          <span class="nav-title">Manajemen Rak Penyimpanan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-09.html">
+          <span class="nav-num">09</span>
+          <span class="nav-title">Riwayat Transaksi dan Invoice</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-10.html">
+          <span class="nav-num">10</span>
+          <span class="nav-title">Surat Jalan dan Transaksi Antar Cabang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-11.html">
+          <span class="nav-num">11</span>
+          <span class="nav-title">Penawaran Harga (Quotation)</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-12.html">
+          <span class="nav-num">12</span>
+          <span class="nav-title">Jual Bahan</span>
+        </a></li><li class="nav-item is-open">
+        <a class="nav-link is-active" href="bab-13.html" aria-current="page">
+          <span class="nav-num">13</span>
+          <span class="nav-title">Katalog, Kategori, dan Cetak Desain</span>
+        </a><ul class="nav-sub"><li><a href="bab-13.html#13-1-katalog-layanan">Katalog layanan</a></li><li><a href="bab-13.html#13-2-kategori-produk">Kategori produk</a></li><li><a href="bab-13.html#13-3-layout-nota-print-designer">Layout nota (Print Designer)</a></li><li><a href="bab-13.html#13-4-file-galeri">File galeri</a></li></ul></li><li class="nav-item">
+        <a class="nav-link" href="bab-14.html">
+          <span class="nav-num">14</span>
+          <span class="nav-title">Stok Bahan Baku, Baju, Buku, Undangan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-15.html">
+          <span class="nav-num">15</span>
+          <span class="nav-title">Pembelian Stok dan Supplier</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-16.html">
+          <span class="nav-num">16</span>
+          <span class="nav-title">Pelanggan dan Promosi WhatsApp</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-17.html">
+          <span class="nav-num">17</span>
+          <span class="nav-title">Tim Marketing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-18.html">
+          <span class="nav-num">18</span>
+          <span class="nav-title">Kas, Biaya, Uang Masuk, dan Buku Hutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-19.html">
+          <span class="nav-num">19</span>
+          <span class="nav-title">Akuntansi dan Jurnal</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-20.html">
+          <span class="nav-num">20</span>
+          <span class="nav-title">Payroll, Kasbon, dan Presensi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-21.html">
+          <span class="nav-num">21</span>
+          <span class="nav-title">Laporan dan Grafik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-22.html">
+          <span class="nav-num">22</span>
+          <span class="nav-title">Cabang, Staff, Hak Akses, dan Pengaturan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-23.html">
+          <span class="nav-num">23</span>
+          <span class="nav-title">Langganan dan Billing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-24.html">
+          <span class="nav-num">24</span>
+          <span class="nav-title">Halaman Publik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-25.html">
+          <span class="nav-num">25</span>
+          <span class="nav-title">Mode Offline dan Sinkronisasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-26.html">
+          <span class="nav-num">26</span>
+          <span class="nav-title">Backup, Restore, dan Keamanan Data</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-27.html">
+          <span class="nav-num">27</span>
+          <span class="nav-title">Tips dan Kebiasaan Kerja yang Disarankan</span>
+        </a></li></ul>
+    <div class="sidebar-foot">
+      <a href="index.html">Ringkasan &amp; alur kerja</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Ganti tema terang atau gelap">
+        <svg class="i-sun" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1"/></svg>
+        <svg class="i-moon" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+        <span>Tema</span>
+      </button>
+    </div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main class="main" id="main">
+    <article class="prose"><header class="chapter-head">
+      <p class="eyebrow">Bab 13 dari 27</p>
+      <h1>Katalog, Kategori, dan Cetak Desain</h1>
+      <p class="chapter-meta">6 bagian · ±6 blok pencarian</p>
+    </header>
+    <h2 id="13-1-katalog-layanan">13.1 Katalog layanan</h2>
+<p>Menu <strong>Katalog Layanan</strong> berisi produk/layanan yang dijual.</p>
+<ul>
+<li>Tambah produk: nama, kategori, tipe harga, harga dasar, satuan, dan deskripsi.</li>
+<li>Atur produk aktif/nonaktif agar tidak muncul di order.</li>
+<li>Hubungkan produk dengan stok bahan bila perlu.</li>
+<li>Gunakan gambar produk agar katalog publik menarik.</li>
+</ul>
+<figure class="shot"><img src="assets/img/07-katalog-layanan.png" alt="Katalog Layanan" loading="lazy"><figcaption>Gambar 13.1 — Katalog Layanan: daftar produk, kategori, harga, stok, dan BOM.</figcaption></figure>
+<h3 id="alur-crud-katalog-layanan">Alur CRUD katalog layanan</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Katalog Layanan</strong> menampilkan ringkasan total layanan, tipe harga, dan tabel produk.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/01-daftar-awal.png" alt="Daftar katalog layanan" loading="lazy"><figcaption>Gambar 13.2 — Daftar katalog layanan sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah layanan</strong> — Klik <strong>Layanan Baru</strong>. Panel <strong>Pengaturan Detail Layanan</strong> terbuka.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/02-form-tambah.png" alt="Form layanan baru" loading="lazy"><figcaption>Gambar 13.3 — Panel pengaturan detail layanan yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Masukkan nama layanan, pilih kategori, tipe harga, satuan, lalu isi <strong>Harga Jual Dasar</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/03-form-terisi.png" alt="Form layanan terisi" loading="lazy"><figcaption>Gambar 13.4 — Data layanan baru yang sudah diisi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>Simpan Katalog</strong>. Layanan baru muncul di tabel; gunakan kolom pencarian untuk menemukannya.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/04-hasil-tambah.png" alt="Hasil tambah layanan" loading="lazy"><figcaption>Gambar 13.5 — Layanan baru tampil pada daftar hasil pencarian.</figcaption></figure>
+</li>
+<li><p><strong>Baca detail</strong> — Klik tombol panah pada kolom <strong>Bahan / BOM</strong> untuk melihat bahan yang tertaut, atau lihat ringkasan kategori, satuan, harga, dan status stok langsung pada baris.</p>
+</li>
+<li><p><strong>Ubah layanan</strong> — Klik ikon pensil pada baris layanan. Ubah data yang diperlukan, misalnya nama dan harga.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/05-form-edit.png" alt="Form ubah layanan" loading="lazy"><figcaption>Gambar 13.6 — Panel edit layanan yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah disimpan, nama dan harga baru langsung tampil di daftar.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/06-hasil-edit.png" alt="Hasil ubah layanan" loading="lazy"><figcaption>Gambar 13.7 — Nama dan harga layanan yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus layanan</strong> — Klik ikon tempat sampah, lalu konfirmasi pada dialog <strong>Hapus Layanan/Katalog?</strong> dengan menekan <strong>Ya, Hapus</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/07-konfirmasi-hapus.png" alt="Konfirmasi hapus layanan" loading="lazy"><figcaption>Gambar 13.8 — Konfirmasi penghapusan layanan secara permanen.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman bila daftar belum berubah. Total layanan kembali berkurang dan data uji tidak lagi ditemukan.</p>
+<figure class="shot"><img src="assets/img/crud-katalog/08-hasil-hapus.png" alt="Hasil hapus layanan" loading="lazy"><figcaption>Gambar 13.9 — Daftar layanan setelah data uji dihapus (total kembali 17).</figcaption></figure>
+</li>
+</ol>
+<blockquote>
+<p><strong>Catatan:</strong> Gunakan tombol <strong>Clone</strong> pada baris layanan untuk menyalin layanan ke cabang lain tanpa membuat ulang data dari awal.</p>
+</blockquote>
+<h2 id="13-2-kategori-produk">13.2 Kategori produk</h2>
+<p>Kategori membantu pencarian dan laporan. Buat kategori yang tidak tumpang tindih, misalnya:</p>
+<ul>
+<li>Cetak Digital</li>
+<li>Offset</li>
+<li>Banner &amp; Spanduk</li>
+<li>Merchandise</li>
+<li>Buku</li>
+<li>Undangan</li>
+</ul>
+<h3 id="alur-crud-kategori-produk">Alur CRUD kategori produk</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Kategori Produk</strong> menampilkan kartu kategori beserta deskripsi dan tombol <strong>Edit</strong>/<strong>Hapus</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/01-daftar-awal.png" alt="Daftar kategori produk" loading="lazy"><figcaption>Gambar 13.10 — Daftar kategori layanan sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah kategori</strong> — Klik <strong>Kategori Baru</strong> untuk membuka formulir di bagian bawah halaman.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/02-form-tambah.png" alt="Form kategori baru" loading="lazy"><figcaption>Gambar 13.11 — Formulir kategori baru yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi data</strong> — Masukkan nama kategori dan deskripsi singkat, lalu klik <strong>Simpan Data</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/03-form-terisi.png" alt="Form kategori terisi" loading="lazy"><figcaption>Gambar 13.12 — Formulir yang sudah diisi dengan data kategori baru.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi hasil</strong> — Kartu kategori baru langsung tampil di daftar.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/04-hasil-tambah.png" alt="Hasil tambah kategori" loading="lazy"><figcaption>Gambar 13.13 — Kategori baru tampil pada daftar.</figcaption></figure>
+</li>
+<li><p><strong>Ubah kategori</strong> — Klik <strong>Edit</strong> pada kartu kategori. Formulir <strong>Edit Kategori</strong> terisi data sebelumnya.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/05-form-edit.png" alt="Form edit kategori" loading="lazy"><figcaption>Gambar 13.14 — Formulir edit kategori.</figcaption></figure>
+</li>
+<li><p><strong>Simpan perubahan</strong> — Perbarui nama/deskripsi, klik <strong>Simpan Data</strong>, lalu pastikan kartu sudah berubah.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/06-hasil-edit.png" alt="Hasil edit kategori" loading="lazy"><figcaption>Gambar 13.15 — Nama dan deskripsi kategori yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus kategori</strong> — Klik <strong>Hapus</strong>, lalu konfirmasi pada dialog <strong>Hapus Kategori?</strong> dengan menekan <strong>Ya, Hapus</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/07-konfirmasi-hapus.png" alt="Konfirmasi hapus kategori" loading="lazy"><figcaption>Gambar 13.16 — Konfirmasi penghapusan kategori.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Kartu kategori hilang dari daftar setelah halaman dimuat ulang.</p>
+<figure class="shot"><img src="assets/img/crud-kategori/08-hasil-hapus.png" alt="Hasil hapus kategori" loading="lazy"><figcaption>Gambar 13.17 — Daftar kategori setelah data uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<blockquote>
+<p><strong>Catatan:</strong> Menghapus kategori dapat memengaruhi layanan yang memakainya. Pindahkan layanan ke kategori lain terlebih dahulu bila diperlukan.</p>
+</blockquote>
+<h2 id="13-3-layout-nota-print-designer">13.3 Layout nota (Print Designer)</h2>
+<p>Menu <strong>Layout Nota</strong> mengatur tampilan struk/invoice:</p>
+<ul>
+<li>Logo, nama toko, alamat, dan kontak.</li>
+<li>Ukuran kertas (58 mm, 80 mm, A4/A5).</li>
+<li>Elemen yang ditampilkan (NPWP, QR, catatan kaki, tanda tangan).</li>
+<li>Uji cetak setelah mengubah layout.</li>
+</ul>
+<h2 id="13-4-file-galeri">13.4 File galeri</h2>
+<p>Menu <strong>File Galeri</strong> menyimpan file desain/aset. Gunakan penamaan yang konsisten, misalnya <code>INV-2026-0001-desain-final.pdf</code>. Hapus file lama secara berkala agar penyimpanan tidak penuh.</p>
+<hr>
+</article>
+    <nav class="pager" aria-label="Navigasi bab">
+        <a class="pager-link" href="bab-12.html"><small>Bab sebelumnya</small><span>12 · Jual Bahan</span></a>
+        <a class="pager-link pager-next" href="bab-14.html"><small>Bab berikutnya</small><span>14 · Stok Bahan Baku, Baju, Buku, Undangan</span></a>
+      </nav>
+    <footer class="pagefoot">
+      <span>Bersumber dari <code>PANDUAN_PENGGUNAAN.md</code> aplikasi PrintPro POS.</span>
+      <a href="#main" class="to-top">Kembali ke atas ↑</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="Pada halaman ini">
+    <p class="toc-title">Pada halaman ini</p>
+    <ul><li class="toc-l2"><a href="#13-1-katalog-layanan" data-toc="13-1-katalog-layanan">13.1 Katalog layanan</a></li><li class="toc-l3"><a href="#alur-crud-katalog-layanan" data-toc="alur-crud-katalog-layanan">Alur CRUD katalog layanan</a></li><li class="toc-l2"><a href="#13-2-kategori-produk" data-toc="13-2-kategori-produk">13.2 Kategori produk</a></li><li class="toc-l3"><a href="#alur-crud-kategori-produk" data-toc="alur-crud-kategori-produk">Alur CRUD kategori produk</a></li><li class="toc-l2"><a href="#13-3-layout-nota-print-designer" data-toc="13-3-layout-nota-print-designer">13.3 Layout nota (Print Designer)</a></li><li class="toc-l2"><a href="#13-4-file-galeri" data-toc="13-4-file-galeri">13.4 File galeri</a></li></ul>
+  </aside>
+</div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button class="lb-close" id="lbClose" aria-label="Tutup gambar">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Gambar sebelumnya">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Gambar berikutnya">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+<div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Cari dalam panduan">
+  <div class="palette-box">
+    <div class="palette-input">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+      <input id="q" type="search" placeholder="Cari: DP, piutang, opname stok, kiosk antrean…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="palette-meta" id="paletteMeta"></div>
+    <ul class="results" id="results" role="listbox" aria-label="Hasil pencarian"></ul>
+    <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> pilih · <kbd>Enter</kbd> buka · pencarian mencakup judul bab, sub-bab, dan isi panduan</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14. Stok Bahan Baku, Baju, Buku, Undangan — Panduan PrintPro POS</title>
+<meta name="description" content="Tambah bahan dengan satuan (lembar, meter, kg, pcs). Catat stok masuk melalui pembelian dan stok keluar melalui pemakaian/penjualan. Lakukan penyesuaian stok (s…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="14. Stok Bahan Baku, Baju, Buku, Undangan — Panduan PrintPro POS">
+<meta property="og:description" content="Tambah bahan dengan satuan (lembar, meter, kg, pcs). Catat stok masuk melalui pembelian dan stok keluar melalui pemakaian/penjualan. Lakukan penyesuaian stok (s…">
+<meta property="og:url" content="https://printpro-panduan.qoder.site/bab-14.html">
+<meta name="theme-color" content="#f7f5f0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi panduan</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn" aria-label="Buka daftar bab" aria-expanded="false">
+    <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2m0 4h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2"/></svg>
+  </button>
+  <a class="topbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>PrintPro POS</a>
+  <span class="topbar-crumb"><span class="crumb-sep" aria-hidden="true">/</span><a href="bab-14.html">Bab 14</a></span>
+  <div class="topbar-actions">
+    <button type="button" class="icon-btn" id="searchBtn" aria-label="Cari dalam panduan">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">
+      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1M4.9 4.9a1 1 0 0 1 1.4 0l.7.7A1 1 0 0 1 5.6 7l-.7-.7a1 1 0 0 1 0-1.4m8.1 8.1a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4m1.4-8.1a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 13 7l.7-.7a1 1 0 0 1 1.4 0M6.3 13a1 1 0 0 1 0 1.4l-.7.7A1 1 0 0 1 4.2 13.7l.7-.7a1 1 0 0 1 1.4 0"/></svg>
+      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+    </button>
+  </div>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Daftar bab">
+    <div class="sidebar-head">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text"><strong>PrintPro POS</strong><small>Panduan operasional percetakan</small></span>
+      </a>
+    </div>
+    <div class="sidebar-search">
+      <button type="button" class="search-trigger" id="searchTrigger" aria-haspopup="dialog">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+        <span>Cari panduan…</span><kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+    </div>
+    <ul class="nav-list"><li class="nav-item">
+        <a class="nav-link" href="bab-01.html">
+          <span class="nav-num">01</span>
+          <span class="nav-title">Masuk dan Memahami Aplikasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-02.html">
+          <span class="nav-num">02</span>
+          <span class="nav-title">Dashboard</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-03.html">
+          <span class="nav-num">03</span>
+          <span class="nav-title">Membuat Order Baru</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-04.html">
+          <span class="nav-num">04</span>
+          <span class="nav-title">Pembayaran, DP, dan Piutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-05.html">
+          <span class="nav-num">05</span>
+          <span class="nav-title">Production Board</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-06.html">
+          <span class="nav-num">06</span>
+          <span class="nav-title">Pekerjaan Selesai</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-07.html">
+          <span class="nav-num">07</span>
+          <span class="nav-title">Sistem Antrean</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-08.html">
+          <span class="nav-num">08</span>
+          <span class="nav-title">Manajemen Rak Penyimpanan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-09.html">
+          <span class="nav-num">09</span>
+          <span class="nav-title">Riwayat Transaksi dan Invoice</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-10.html">
+          <span class="nav-num">10</span>
+          <span class="nav-title">Surat Jalan dan Transaksi Antar Cabang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-11.html">
+          <span class="nav-num">11</span>
+          <span class="nav-title">Penawaran Harga (Quotation)</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-12.html">
+          <span class="nav-num">12</span>
+          <span class="nav-title">Jual Bahan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-13.html">
+          <span class="nav-num">13</span>
+          <span class="nav-title">Katalog, Kategori, dan Cetak Desain</span>
+        </a></li><li class="nav-item is-open">
+        <a class="nav-link is-active" href="bab-14.html" aria-current="page">
+          <span class="nav-num">14</span>
+          <span class="nav-title">Stok Bahan Baku, Baju, Buku, Undangan</span>
+        </a><ul class="nav-sub"><li><a href="bab-14.html#14-1-stok-bahan-baku">Stok bahan baku</a></li><li><a href="bab-14.html#14-2-stok-baju-polos">Stok baju polos</a></li><li><a href="bab-14.html#14-3-stok-buku">Stok buku</a></li><li><a href="bab-14.html#14-4-katalog-undangan">Katalog undangan</a></li><li><a href="bab-14.html#14-5-opname-stok">Opname stok</a></li></ul></li><li class="nav-item">
+        <a class="nav-link" href="bab-15.html">
+          <span class="nav-num">15</span>
+          <span class="nav-title">Pembelian Stok dan Supplier</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-16.html">
+          <span class="nav-num">16</span>
+          <span class="nav-title">Pelanggan dan Promosi WhatsApp</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-17.html">
+          <span class="nav-num">17</span>
+          <span class="nav-title">Tim Marketing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-18.html">
+          <span class="nav-num">18</span>
+          <span class="nav-title">Kas, Biaya, Uang Masuk, dan Buku Hutang</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-19.html">
+          <span class="nav-num">19</span>
+          <span class="nav-title">Akuntansi dan Jurnal</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-20.html">
+          <span class="nav-num">20</span>
+          <span class="nav-title">Payroll, Kasbon, dan Presensi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-21.html">
+          <span class="nav-num">21</span>
+          <span class="nav-title">Laporan dan Grafik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-22.html">
+          <span class="nav-num">22</span>
+          <span class="nav-title">Cabang, Staff, Hak Akses, dan Pengaturan</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-23.html">
+          <span class="nav-num">23</span>
+          <span class="nav-title">Langganan dan Billing</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-24.html">
+          <span class="nav-num">24</span>
+          <span class="nav-title">Halaman Publik</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-25.html">
+          <span class="nav-num">25</span>
+          <span class="nav-title">Mode Offline dan Sinkronisasi</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-26.html">
+          <span class="nav-num">26</span>
+          <span class="nav-title">Backup, Restore, dan Keamanan Data</span>
+        </a></li><li class="nav-item">
+        <a class="nav-link" href="bab-27.html">
+          <span class="nav-num">27</span>
+          <span class="nav-title">Tips dan Kebiasaan Kerja yang Disarankan</span>
+        </a></li></ul>
+    <div class="sidebar-foot">
+      <a href="index.html">Ringkasan &amp; alur kerja</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Ganti tema terang atau gelap">
+        <svg class="i-sun" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M10 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10m0-13a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1m0 14a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0v-1a1 1 0 0 1 1-1M3 10a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1m12 0a1 1 0 0 1 1-1h1a1 1 0 0 1 0 2h-1a1 1 0 0 1-1-1"/></svg>
+        <svg class="i-moon" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M17.3 12.3A7.5 7.5 0 0 1 7.7 2.7a7.5 7.5 0 1 0 9.6 9.6"/></svg>
+        <span>Tema</span>
+      </button>
+    </div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main class="main" id="main">
+    <article class="prose"><header class="chapter-head">
+      <p class="eyebrow">Bab 14 dari 27</p>
+      <h1>Stok Bahan Baku, Baju, Buku, Undangan</h1>
+      <p class="chapter-meta">9 bagian · ±9 blok pencarian</p>
+    </header>
+    <h2 id="14-1-stok-bahan-baku">14.1 Stok bahan baku</h2>
+<ul>
+<li>Tambah bahan dengan satuan (lembar, meter, kg, pcs).</li>
+<li>Catat stok masuk melalui pembelian dan stok keluar melalui pemakaian/penjualan.</li>
+<li>Lakukan penyesuaian stok (stock adjustment) saat opname, dengan alasan yang jelas.</li>
+<li>Tetapkan stok minimum agar muncul peringatan.</li>
+</ul>
+<figure class="shot"><img src="assets/img/08-stok-bahan.png" alt="Stok Bahan Baku" loading="lazy"><figcaption>Gambar 14.1 — Stok Bahan Baku: nilai persediaan, peringatan stok kritis, dan pembelian ulang.</figcaption></figure>
+<h3 id="alur-crud-stok-bahan-baku">Alur CRUD stok bahan baku</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Stok Bahan Baku</strong> menampilkan kartu ringkasan (total jenis, unit fisik, nilai aset, bahan kritis), peringatan dini stok, dan tabel bahan per kategori.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/01-daftar-awal.png" alt="Daftar bahan baku" loading="lazy"><figcaption>Gambar 14.2 — Daftar bahan baku sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah bahan</strong> — Klik <strong>BARU</strong>. Form <strong>Material Baru</strong> terbuka.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/02-form-tambah.png" alt="Form material baru" loading="lazy"><figcaption>Gambar 14.3 — Form material baru yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Masukkan <strong>Nama Material</strong>, <strong>Kategori</strong>, <strong>Harga Modal</strong> per satuan, <strong>Harga Jual Acuan</strong>, <strong>Stok Minimum</strong>, <strong>Satuan Dasar</strong>, dan <strong>Cabang</strong>. Aktifkan <strong>Satuan Bertingkat</strong> hanya bila satu kemasan berisi beberapa satuan dasar (contoh: 1 Roll = 224 m²).</p>
+<figure class="shot"><img src="assets/img/crud-bahan/03-form-terisi.png" alt="Form material terisi" loading="lazy"><figcaption>Gambar 14.4 — Data bahan baru yang sudah diisi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>SIMPAN</strong>. Bahan baru langsung masuk tabel. Karena belum ada stok masuk, sisa fisik bernilai 0 sehingga berstatus <strong>HABIS</strong> dan ikut masuk peringatan stok kritis.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/04-hasil-tambah.png" alt="Hasil tambah bahan" loading="lazy"><figcaption>Gambar 14.5 — Bahan baru tampil dengan status HABIS dan peringatan stok.</figcaption></figure>
+</li>
+<li><p><strong>Ubah bahan</strong> — Cari bahan pada kolom <strong>CARI NAMA BAHAN...</strong>, lalu klik tombol <strong>Edit Bahan Baku</strong> (ikon pensil) pada kolom <strong>AKSI GUDANG</strong>. Ubah data yang diperlukan.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/05-form-edit.png" alt="Form ubah bahan" loading="lazy"><figcaption>Gambar 14.6 — Form ubah material yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah <strong>SIMPAN</strong>, nama dan harga modal baru langsung tampil pada tabel dan kartu peringatan stok.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/06-hasil-edit.png" alt="Hasil ubah bahan" loading="lazy"><figcaption>Gambar 14.7 — Nama dan harga modal bahan yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus bahan</strong> — Klik tombol <strong>Hapus Bahan Baku</strong> (ikon tempat sampah) pada kolom <strong>AKSI GUDANG</strong>, lalu tekan <strong>Ya, Hapus</strong> pada dialog <strong>Hapus Material?</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/07-konfirmasi-hapus.png" alt="Konfirmasi hapus bahan" loading="lazy"><figcaption>Gambar 14.8 — Dialog konfirmasi hapus material.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Bahan uji tidak lagi muncul dan jumlah <strong>Total Bahan Baku</strong> kembali ke nilai semula.</p>
+<figure class="shot"><img src="assets/img/crud-bahan/08-hasil-hapus.png" alt="Hasil hapus bahan" loading="lazy"><figcaption>Gambar 14.9 — Daftar kembali normal setelah bahan uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Selain CRUD dasar, setiap baris bahan memiliki tombol cepat <strong>JUAL</strong> (kasir jual bahan), <strong>RESTOCK</strong> (tambah stok masuk), <strong>OPNAME</strong> (penyesuaian hasil hitung fisik), <strong>Transfer Cabang</strong>, dan <strong>Clone ke Cabang Lain</strong>. Gunakan <strong>RESTOCK</strong> atau menu <strong>Beli Stok</strong> untuk mengisi stok bahan yang baru dibuat.</p>
+<h2 id="14-2-stok-baju-polos">14.2 Stok baju polos</h2>
+<p>Untuk bisnis apparel:</p>
+<ul>
+<li>Kelola per model, ukuran, dan warna.</li>
+<li>Catat stok masuk dari supplier dan keluar untuk pesanan.</li>
+<li>Gunakan divisi terkait (<code>DIVISI_JERSEY</code>, <code>DIVISI_SABLON_BORDIR</code>) bila ada.</li>
+</ul>
+<h3 id="alur-crud-stok-baju-polos">Alur CRUD stok baju polos</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Stok Baju Polos</strong> menampilkan satu kartu per varian: model, warna, ukuran, bahan, sisa stok, layanan katalog yang ditautkan, harga modal, dan biaya jual tambahan.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/01-daftar-awal.png" alt="Daftar baju polos" loading="lazy"><figcaption>Gambar 14.10 — Daftar varian baju polos sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah varian</strong> — Klik <strong>BAJU BARU</strong>. Panel <strong>Tambah Baju Polos</strong> terbuka dengan dua bagian: <strong>Penugasan Layanan</strong> dan <strong>Detail Baju</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/02-form-tambah.png" alt="Form baju baru" loading="lazy"><figcaption>Gambar 14.11 — Form tambah baju polos yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Pilih <strong>Filter Kategori</strong> lalu <strong>Layanan Katalog</strong> yang akan ditautkan, kemudian isi nama produk, warna, ukuran, bahan, stok awal, biaya jual tambahan, dan harga modal (HPP kaos).</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/03-form-terisi.png" alt="Form baju terisi" loading="lazy"><figcaption>Gambar 14.12 — Data varian baju baru yang sudah diisi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>SIMPAN DATA</strong>. Kartu varian baru langsung tampil pada daftar.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/04-hasil-tambah.png" alt="Hasil tambah baju" loading="lazy"><figcaption>Gambar 14.13 — Varian baju baru tampil pada daftar.</figcaption></figure>
+</li>
+<li><p><strong>Ubah varian</strong> — Klik <strong>EDIT</strong> pada kartu varian. Ubah data yang diperlukan, misalnya nama produk atau warna.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/05-form-edit.png" alt="Form ubah baju" loading="lazy"><figcaption>Gambar 14.14 — Panel ubah varian baju yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah <strong>SIMPAN DATA</strong>, nama varian baru langsung tampil pada kartu.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/06-hasil-edit.png" alt="Hasil ubah baju" loading="lazy"><figcaption>Gambar 14.15 — Nama varian baju yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus varian</strong> — Klik <strong>HAPUS</strong> pada kartu varian, lalu tekan <strong>Ya, Hapus</strong> pada dialog <strong>Hapus Stok Baju?</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/07-konfirmasi-hapus.png" alt="Konfirmasi hapus baju" loading="lazy"><figcaption>Gambar 14.16 — Dialog konfirmasi hapus varian baju.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Varian uji tidak lagi muncul dan daftar kembali ke jumlah semula.</p>
+<figure class="shot"><img src="assets/img/crud-baju-polos/08-hasil-hapus.png" alt="Hasil hapus baju" loading="lazy"><figcaption>Gambar 14.17 — Daftar kembali normal setelah varian uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Gunakan tombol <strong>Stock Opname</strong> untuk menyesuaikan stok setelah hitung fisik, dan <strong>Clone ke cabang lain</strong> untuk menduplikasi varian ke cabang lain tanpa membuat ulang dari nol.</p>
+<h2 id="14-3-stok-buku">14.3 Stok buku</h2>
+<p>Halaman <strong>Stok Buku</strong> mengelola varian buku beserta spesifikasi cetak dan jilidnya: layanan katalog yang ditautkan, ukuran/dimensi, jenis kertas isi, jumlah halaman, tipe cover, laminasi, dan finishing penjilidan. Setiap varian memiliki HPP, harga tambahan, serta stok per cabang.</p>
+<h3 id="alur-crud-stok-buku">Alur CRUD stok buku</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Stok Buku</strong> menampilkan filter cabang dan satu kartu per varian buku. Setiap kartu memuat tombol <strong>Clone Varian ke Cabang Lain</strong>, <strong>Edit Varian</strong>, <strong>Stock Opname</strong>, dan <strong>Hapus Varian</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-buku/01-daftar-awal.png" alt="Daftar stok buku" loading="lazy"><figcaption>Gambar 14.18 — Daftar varian buku sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah varian</strong> — Klik <strong>TAMBAH BUKU</strong>. Panel <strong>TAMBAH VARIAN BUKU</strong> terbuka.</p>
+<figure class="shot"><img src="assets/img/crud-buku/02-form-tambah.png" alt="Form buku baru" loading="lazy"><figcaption>Gambar 14.19 — Panel tambah varian buku yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Pilih <strong>Kategori Buku</strong> lalu <strong>Tautkan Layanan Produk</strong>, kemudian isi <strong>Nama Buku/Judul</strong>, ukuran, jenis kertas isi, laminasi cover, jumlah halaman, jenis cover, dan finishing. Lengkapi <strong>Stok Awal</strong>, <strong>Estimasi HPP</strong>, dan <strong>Harga Tambahan</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-buku/03-form-terisi.png" alt="Form buku terisi" loading="lazy"><figcaption>Gambar 14.20 — Data varian buku baru yang sudah diisi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>SIMPAN VARIAN</strong>. Kartu varian baru langsung tampil lengkap dengan HPP, harga up, dan stok saat ini.</p>
+<figure class="shot"><img src="assets/img/crud-buku/04-hasil-tambah.png" alt="Hasil tambah buku" loading="lazy"><figcaption>Gambar 14.21 — Varian buku baru tampil pada daftar.</figcaption></figure>
+</li>
+<li><p><strong>Ubah varian</strong> — Gunakan kolom <strong>CARI NAMA / KERTAS / JILID / UKURAN...</strong> untuk menemukan varian, lalu klik <strong>Edit Varian</strong>. Ubah data yang diperlukan, misalnya judul buku.</p>
+<figure class="shot"><img src="assets/img/crud-buku/05-form-edit.png" alt="Form ubah buku" loading="lazy"><figcaption>Gambar 14.22 — Panel ubah varian buku yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah <strong>SIMPAN VARIAN</strong>, judul baru langsung tampil pada kartu varian.</p>
+<figure class="shot"><img src="assets/img/crud-buku/06-hasil-edit.png" alt="Hasil ubah buku" loading="lazy"><figcaption>Gambar 14.23 — Judul buku yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus varian</strong> — Klik <strong>Hapus Varian</strong>, lalu tekan <strong>Ya, Hapus</strong> pada dialog <strong>Hapus Varian Buku?</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-buku/07-konfirmasi-hapus.png" alt="Konfirmasi hapus buku" loading="lazy"><figcaption>Gambar 14.24 — Dialog konfirmasi hapus varian buku.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Varian uji tidak lagi muncul dan daftar kembali ke jumlah semula.</p>
+<figure class="shot"><img src="assets/img/crud-buku/08-hasil-hapus.png" alt="Hasil hapus buku" loading="lazy"><figcaption>Gambar 14.25 — Daftar kembali normal setelah varian uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Gunakan <strong>Stock Opname</strong> untuk menyesuaikan stok hasil hitung fisik, <strong>Clone Varian ke Cabang Lain</strong> untuk menduplikasi varian ke cabang lain, dan tombol <strong>Riwayat Opname Buku</strong> untuk melihat jejak penyesuaian stok buku.</p>
+<h2 id="14-4-katalog-undangan">14.4 Katalog undangan</h2>
+<p>Katalog undangan berisi model desain beserta tipe, dimensi, pilihan kertas, laminasi, amplop, foil, HPP, dan harga jual acuan. Setiap model juga dapat memiliki resep bahan baku (BOM) agar stok bahan otomatis terpotong saat order.</p>
+<h3 id="alur-crud-katalog-undangan">Alur CRUD katalog undangan</h3>
+<ol>
+<li><p><strong>Lihat daftar</strong> — Menu <strong>Katalog Undangan</strong> menampilkan tab <strong>Katalog Fisik</strong>, filter cabang, pencarian, dan filter format. Setiap kartu memuat tombol <strong>Pesan di Order</strong>, <strong>Hitung</strong>, <strong>Edit</strong>, dan tombol hapus.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/01-daftar-awal.png" alt="Daftar katalog undangan" loading="lazy"><figcaption>Gambar 14.26 — Daftar model undangan sebelum perubahan.</figcaption></figure>
+</li>
+<li><p><strong>Tambah model</strong> — Klik <strong>Tambah Model Undangan</strong>. Panel <strong>Tambah Model Undangan Baru</strong> terbuka.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/02-form-tambah.png" alt="Form undangan baru" loading="lazy"><figcaption>Gambar 14.27 — Panel tambah model undangan yang masih kosong.</figcaption></figure>
+</li>
+<li><p><strong>Isi detail</strong> — Masukkan <strong>Nama Model Undangan</strong>, pilih <strong>Tipe Desain</strong>, lalu lengkapi dimensi, pilihan kertas, laminasi, amplop, foil, <strong>HPP</strong>, <strong>Harga Tambahan</strong>, dan <strong>Sediaan Stok Contoh</strong>. Bahan baku dapat ditambahkan pada bagian <strong>Resep Bahan Baku (BOM)</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/03-form-terisi.png" alt="Form undangan terisi" loading="lazy"><figcaption>Gambar 14.28 — Data model undangan baru yang sudah diisi.</figcaption></figure>
+</li>
+<li><p><strong>Simpan dan verifikasi</strong> — Klik <strong>Simpan Contoh Katalog</strong>. Dialog <strong>Berhasil!</strong> muncul dan kartu model baru langsung tampil dengan HPP serta harga jual acuan.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/04-hasil-tambah.png" alt="Hasil tambah undangan" loading="lazy"><figcaption>Gambar 14.29 — Model undangan baru tampil pada daftar.</figcaption></figure>
+</li>
+<li><p><strong>Ubah model</strong> — Klik <strong>Edit</strong> pada kartu model. Ubah data yang diperlukan, misalnya nama model atau HPP.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/05-form-edit.png" alt="Form ubah undangan" loading="lazy"><figcaption>Gambar 14.30 — Panel edit model undangan yang sudah terisi data sebelumnya.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi perubahan</strong> — Setelah <strong>Simpan Contoh Katalog</strong>, nama dan harga baru langsung tampil pada kartu model.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/06-hasil-edit.png" alt="Hasil ubah undangan" loading="lazy"><figcaption>Gambar 14.31 — Nama dan HPP model undangan yang sudah diperbarui.</figcaption></figure>
+</li>
+<li><p><strong>Hapus model</strong> — Klik tombol hapus pada kartu model, lalu tekan <strong>Ya, Hapus</strong> pada dialog <strong>Hapus Katalog?</strong>.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/07-konfirmasi-hapus.png" alt="Konfirmasi hapus undangan" loading="lazy"><figcaption>Gambar 14.32 — Dialog konfirmasi hapus model undangan.</figcaption></figure>
+</li>
+<li><p><strong>Verifikasi penghapusan</strong> — Muat ulang halaman. Model uji tidak lagi muncul dan daftar kembali ke jumlah semula.</p>
+<figure class="shot"><img src="assets/img/crud-undangan/08-hasil-hapus.png" alt="Hasil hapus undangan" loading="lazy"><figcaption>Gambar 14.33 — Daftar kembali normal setelah model uji dihapus.</figcaption></figure>
+</li>
+</ol>
+<p>Gunakan <strong>Hitung</strong> untuk menyimulasikan biaya berdasarkan kuantitas di kalkulator cetak, dan <strong>Pesan di Order</strong> untuk langsung membuat order dari model yang dipilih.</p>
+<h2 id="14-5-opname-stok">14.5 Opname stok</h2>
+<p>Lakukan minimal sebulan sekali:</p>
+<ol>
+<li>Cetak/ekspor daftar stok sistem.</li>
+<li>Hitung fisik.</li>
+<li>Catat selisih melalui penyesuaian stok.</li>
+<li>Simpan bukti opname.</li>
+</ol>
+<hr>
+</article>
+    <nav class="pager" aria-label="Navigasi bab">
+        <a class="pager-link" href="bab-13.html"><small>Bab sebelumnya</small><span>13 · Katalog, Kategori, dan Cetak Desain</span></a>
+        <a class="pager-link pager-next" href="bab-15.html"><small>Bab berikutnya</small><span>15 · Pembelian Stok dan Supplier</span></a>
+      </nav>
+    <footer class="pagefoot">
+      <span>Bersumber dari <code>PANDUAN_PENGGUNAAN.md</code> aplikasi PrintPro POS.</span>
+      <a href="#main" class="to-top">Kembali ke atas ↑</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="Pada halaman ini">
+    <p class="toc-title">Pada halaman ini</p>
+    <ul><li class="toc-l2"><a href="#14-1-stok-bahan-baku" data-toc="14-1-stok-bahan-baku">14.1 Stok bahan baku</a></li><li class="toc-l3"><a href="#alur-crud-stok-bahan-baku" data-toc="alur-crud-stok-bahan-baku">Alur CRUD stok bahan baku</a></li><li class="toc-l2"><a href="#14-2-stok-baju-polos" data-toc="14-2-stok-baju-polos">14.2 Stok baju polos</a></li><li class="toc-l3"><a href="#alur-crud-stok-baju-polos" data-toc="alur-crud-stok-baju-polos">Alur CRUD stok baju polos</a></li><li class="toc-l2"><a href="#14-3-stok-buku" data-toc="14-3-stok-buku">14.3 Stok buku</a></li><li class="toc-l3"><a href="#alur-crud-stok-buku" data-toc="alur-crud-stok-buku">Alur CRUD stok buku</a></li><li class="toc-l2"><a href="#14-4-katalog-undangan" data-toc="14-4-katalog-undangan">14.4 Katalog undangan</a></li><li class="toc-l3"><a href="#alur-crud-katalog-undangan" data-toc="alur-crud-katalog-undangan">Alur CRUD katalog undangan</a></li><li class="toc-l2"><a href="#14-5-opname-stok" data-toc="14-5-opname-stok">14.5 Opname stok</a></li></ul>
+  </aside>
+</div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <button class="lb-close" id="lbClose" aria-label="Tutup gambar">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Gambar sebelumnya">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Gambar berikutnya">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+<div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Cari dalam panduan">
+  <div class="palette-box">
+    <div class="palette-input">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.7 10.3a5.5 5.5 0 1 0-1.4 1.4l2.3 2.3a1 1 0 0 0 1.4-1.4zM6.5 9A2.5 2.5 0 1 1 9 6.5 2.5 2.5 0 0 1 6.5 9"/></svg>
+      <input id="q" type="search" placeholder="Cari: DP, piutang, opname stok, kiosk antrean…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="palette-meta" id="paletteMeta"></div>
+    <ul class="results" id="results" role="listbox" aria-label="Hasil pencarian"></ul>
+    <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> pilih · <kbd>Enter</kbd> buka · pencarian mencakup judul bab, sub-bab, dan isi panduan</p>
+  </div>
+</div>
+</body>
+</html>
